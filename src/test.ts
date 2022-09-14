@@ -1,0 +1,1 @@
+export const someFunction = (arg: number): string => {  console.log('ПРИВЕТ ИЗ ЕУС')  return  'Привет'}
