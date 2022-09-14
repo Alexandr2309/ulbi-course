@@ -3,7 +3,10 @@ bin-debug/
 bin-release/
 [Oo]bj/
 [Bb]in/
-
+node_modules/
+/node_modules
+/build
+/.idea
 # Other files and folders
 .settings/
 
