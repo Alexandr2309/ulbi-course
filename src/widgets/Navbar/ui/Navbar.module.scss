@@ -1,0 +1,13 @@
+.Navbar {
+  display: flex;
+  align-items: center;
+  height: var(--navbar-height);
+  padding: 20px;
+  background: var(--inverted-bg-color);
+}
+.mainLink {
+  margin-right: 15px;
+}
+.links {
+  margin-left: auto;
+}
