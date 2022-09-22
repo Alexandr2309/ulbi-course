@@ -1,3 +1,6 @@
 .ThemeSwitcher {
 cursor: pointer;
+  & svg {
+    cursor: pointer;
+  }
 }
