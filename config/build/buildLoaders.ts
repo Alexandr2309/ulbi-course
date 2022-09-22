@@ -1,6 +1,6 @@
-import webpack from 'webpack'
-import { BuildOptions } from './types/config'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import webpack from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { BuildOptions } from './types/config';
 
 export default function buildLoaders({
   isDev,
@@ -8,7 +8,7 @@ export default function buildLoaders({
   const svgLoader = {
     test: /\.svg$/,
     use: ['@svgr/webpack'],
-  }
+  };
 
   const cssLoader = {
     test: /\.s[ac]ss$/i,
@@ -30,7 +30,7 @@ export default function buildLoaders({
       // Compiles Sass to CSS
       'sass-loader',
     ],
-  }
+  };
 
   const babelLoader = {
     test: /\.(js|jsx|tsx)$/,
@@ -50,13 +50,13 @@ export default function buildLoaders({
         ],
       },
     },
-  }
+  };
 
   const tsLoader = {
     test: /\.tsx?$/,
     use: 'ts-loader',
     exclude: /node_modules/,
-  }
+  };
 
   const fileLoader = {
     test: /\.(png|jpe?g|gif|woff|woff2)$/i,
@@ -65,7 +65,7 @@ export default function buildLoaders({
         loader: 'file-loader',
       },
     ],
-  }
+  };
 
-  return [fileLoader, svgLoader, babelLoader, tsLoader, cssLoader]
+  return [fileLoader, svgLoader, babelLoader, tsLoader, cssLoader];
 }
