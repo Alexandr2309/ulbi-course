@@ -1,0 +1,12 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "indentation": [2],
+    "max-line-length": null,
+    "selector-class-pattern": null,
+    "declaration-block-semicolon-newline-after": null,
+    "block-opening-brace-newline-after": null,
+    "block-closing-brace-newline-before": null,
+    "no-missing-end-of-source-newline": null
+  }
+}

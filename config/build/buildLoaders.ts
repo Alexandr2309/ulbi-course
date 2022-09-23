@@ -33,7 +33,7 @@ export default function buildLoaders({
   };
 
   const babelLoader = {
-    test: /\.(js|jsx|tsx)$/,
+    test: /\.(js|jsx|tsx|ts)$/,
     exclude: /(node_modules|bower_components)/,
     use: {
       loader: 'babel-loader',
