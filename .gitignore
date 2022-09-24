@@ -8,7 +8,7 @@ node_modules/
 /build
 /.idea
 # Other files and folders
-.settings/
+.settings
 
 # Executables
 *.swf
