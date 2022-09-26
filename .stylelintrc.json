@@ -7,6 +7,9 @@
     "declaration-block-semicolon-newline-after": null,
     "block-opening-brace-newline-after": null,
     "block-closing-brace-newline-before": null,
-    "no-missing-end-of-source-newline": null
+    "no-missing-end-of-source-newline": null,
+    "rule-empty-line-before": null,
+    "at-rule-semicolon-newline-after": null,
+    "block-closing-brace-newline-after": "always-single-line"
   }
 }
