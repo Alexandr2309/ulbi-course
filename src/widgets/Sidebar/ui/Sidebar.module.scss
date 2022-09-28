@@ -1,0 +1,27 @@
+// Sidebar styles
+.Sidebar {
+  width: var(--sidebar-width);
+  background: var(--inverted-bg-color);
+  height: calc(100vh - var(--navbar-height));
+  position: relative;
+  padding: 10px 0;
+  transition: width 0.3s ease;
+  text-align: center;
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+}
+
+.lang {
+  margin-left: 20px;
+  font: var(--font-l);
+}
+
+.switchers {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
