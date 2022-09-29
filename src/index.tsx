@@ -5,13 +5,16 @@ import { ThemeContextProvider } from 'app/providers/ThemeProvider';
 import App from './app/App';
 
 import 'shared/config/i18n/i18n';
+import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 
 const root = createRoot(document.getElementById('root'));
 
 root.render(
   <BrowserRouter>
     <ThemeContextProvider>
-      <App />
+      <ErrorBoundary>
+        <App />
+      </ErrorBoundary>
     </ThemeContextProvider>
   </BrowserRouter>,
 );

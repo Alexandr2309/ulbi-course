@@ -1,0 +1,14 @@
+// PageError styles
+.PageError {
+  min-height: 100vh;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font: var(--font-l);
+
+  & button {
+    margin-top: 25px;
+  }
+}

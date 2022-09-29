@@ -2,5 +2,7 @@
   "Главная страница": "Main Page",
   "Перевод": "Translation",
   "О нас": "About page",
-  "Расскрыть": "Toggle"
+  "Расскрыть": "Toggle",
+  "Произошла непредвиденная ошибка": "An unexpected error has occurred",
+  "Перезагрузить страницу": "Reload Page"
 }

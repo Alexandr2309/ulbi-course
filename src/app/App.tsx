@@ -1,4 +1,6 @@
-import { Suspense } from 'react';
+import {
+  MouseEvent, Suspense, useEffect, useState,
+} from 'react';
 import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/Navbar';
 import { classNames } from 'shared/lib/classNames/classNames';
