@@ -1,6 +1,6 @@
 import webpack from 'webpack';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
+import { buildCssLoader } from './loaders/buildCssLoader';
 
 export default function buildLoaders({
   isDev,
@@ -10,27 +10,7 @@ export default function buildLoaders({
     use: ['@svgr/webpack'],
   };
 
-  const cssLoader = {
-    test: /\.s[ac]ss$/i,
-    use: [
-      // Creates `style` nodes from JS strings
-      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-      // Translates CSS into CommonJS
-      {
-        loader: 'css-loader',
-        options: {
-          modules: {
-            auto: (resPath: string) => Boolean(/.module./.test(resPath)),
-            localIdentName: isDev
-              ? '[path][name]__[local]--[hash:base64:8]'
-              : '[hash:base64:8]',
-          },
-        },
-      },
-      // Compiles Sass to CSS
-      'sass-loader',
-    ],
-  };
+  const cssLoader = buildCssLoader(isDev);
 
   const babelLoader = {
     test: /\.(js|jsx|tsx|ts)$/,

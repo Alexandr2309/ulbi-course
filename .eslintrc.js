@@ -20,13 +20,12 @@ module.exports = {
     'react/jsx-indent-props': [2, 2],
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
-      ignoreAttribute: ['data-testid'],
+      ignoreAttribute: ['data-testid', 'to'],
     }],
     indent: [2, 2],
-    'react/jsx-filename-extension': [
-      1,
-      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
-    ],
+    'react/jsx-filename-extension': [1, {
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    }],
     'no-shadow': 'off',
     'no-unused-vars': 'warn',
     'react/require-default-props': 'off',
@@ -46,17 +45,17 @@ module.exports = {
       avoidEscape: true,
       allowTemplateLiterals: true,
     }],
-    'max-len': ['error', { ignoreComments: true }],
+    'max-len': ['error', {
+      ignoreComments: true,
+    }],
   },
   globals: {
     __IS__DEV__: true,
   },
-  overrides: [
-    {
-      files: ['**/src/**/*.test.{ts,tsx}'],
-      rules: {
-        'i18next/no-literal-string': 'off',
-      },
+  overrides: [{
+    files: ['**/src/**/*.test.{ts,tsx}'],
+    rules: {
+      'i18next/no-literal-string': 'off',
     },
-  ],
+  }],
 };
