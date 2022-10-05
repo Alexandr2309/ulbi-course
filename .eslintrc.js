@@ -15,6 +15,7 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
+    'linebreak-style': ['warn', 'windows'],
     'import/no-unresolved': 'off',
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
