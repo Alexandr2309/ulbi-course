@@ -24,9 +24,13 @@ jobs:
       - name: linting typescript
         run: npm run lint:ts
       - name: linting scss
-        run: npm run lint:scss
+        run: npm run lint:scss|
       - name: test unit
         run: npm run test:unit
+      - name: build storybook
+        run: npm run storybook:build
+      - name: loki ci test
+        run: npm run test:ui:ci
 
 
 
