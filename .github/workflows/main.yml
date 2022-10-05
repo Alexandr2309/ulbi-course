@@ -6,7 +6,7 @@ on:
     branches: [ master ]
 jobs:
   pipeline:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     strategy:
       matrix:
         node-version: [ 16.x ]
@@ -21,16 +21,22 @@ jobs:
         run: npm install
       - name: build project production
         run: npm run build:prod
+        if: always()
       - name: linting typescript
         run: npm run lint:ts
+        if: always()
       - name: linting scss
         run: npm run lint:scss
+        if: always()
       - name: test unit
         run: npm run test:unit
+        if: always()
       - name: build storybook
         run: npm run storybook:build
+        if: always()
       - name: loki ci test
         run: npm run test:ui:ci
+        if: always()
 
 
 
