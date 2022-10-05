@@ -1,4 +1,4 @@
-name: GitBut CI
+name: GitBut pipeline
 on:
   push:
     branches: [ master ]
