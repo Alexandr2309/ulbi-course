@@ -4,9 +4,10 @@ import { classNames } from 'shared/lib/classNames/classNames';
 
 export interface LangSwitcherProps {
   className?: string;
+  short: boolean
 }
 
-export const LangSwitcher = ({ className }: LangSwitcherProps) => {
+export const LangSwitcher = ({ className, short }: LangSwitcherProps) => {
   const { t, i18n } = useTranslation();
 
   const toggleLang = () => {
@@ -19,7 +20,7 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
       theme={ThemeButton.CLEAR}
       className={classNames('', {}, [className])}
     >
-      {t('Перевод')}
+      {short ? t('Язык') : t('Перевод')}
     </Button>
   );
 };
