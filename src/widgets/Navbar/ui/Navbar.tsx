@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { MouseEvent, useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Modal } from 'shared/ui/Modal/Modal';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
