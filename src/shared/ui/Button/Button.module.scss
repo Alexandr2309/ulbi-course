@@ -3,11 +3,16 @@
   padding: 10px 15px;
 }
 
-.clear {
+.clear,
+.clearInverted {
   background: none;
   outline: none;
   padding: 0;
   border: none;
+}
+
+.clearInverted {
+  color: var(--inverted-primary-color);
 }
 
 .outlined {

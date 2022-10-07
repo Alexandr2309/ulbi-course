@@ -10,6 +10,7 @@
     "no-missing-end-of-source-newline": null,
     "rule-empty-line-before": null,
     "at-rule-semicolon-newline-after": null,
-    "block-closing-brace-newline-after": "always-single-line"
+    "block-closing-brace-newline-after": "always-single-line",
+    "scss/operator-no-unspaced": null
   }
 }
