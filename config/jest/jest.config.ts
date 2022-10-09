@@ -33,6 +33,9 @@ export default {
   moduleDirectories: [
     'node_modules',
   ],
+  globals: {
+    __IS__DEV__: true,
+  },
   moduleFileExtensions: [
     'js',
     'jsx',
@@ -86,7 +89,6 @@ export default {
   // globalTeardown: undefined,
 
   // A set of global variables that need to be available in all tests environments
-  // globals: {},
 
   // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
   // maxWorkers: "50%",
