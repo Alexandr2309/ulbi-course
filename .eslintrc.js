@@ -36,6 +36,7 @@ module.exports = {
         ignoreAttribute: ['data-testid', 'to'],
       },
     ],
+    'no-undef': 'off',
     indent: [2, 2],
     'react/jsx-filename-extension': [
       1,
@@ -80,6 +81,7 @@ module.exports = {
   },
   globals: {
     __IS__DEV__: true,
+    __API__: true,
   },
   overrides: [
     {
