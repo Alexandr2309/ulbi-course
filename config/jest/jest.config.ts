@@ -35,7 +35,8 @@ export default {
   ],
   globals: {
     __IS__DEV__: true,
-    __API__: true,
+    __API__: '',
+    __PROJECT__: 'jest',
   },
   moduleFileExtensions: [
     'js',

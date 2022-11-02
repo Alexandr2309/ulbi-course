@@ -4,7 +4,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Select } from 'shared/ui/Select/Select';
 import { useTranslation } from 'react-i18next';
-import cls from './CountrySelect.module.scss';
 import { Country } from '../model/types/country';
 
 interface ICurrencySelectProps {
@@ -33,7 +32,7 @@ export const CountrySelect = ({
 
   return (
     <Select
-      className={classNames(cls.CurrencySelect, {}, [className])}
+      className={classNames('', {}, [className])}
       options={options}
       value={value}
       label={t('Укажите страну')}

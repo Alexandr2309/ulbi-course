@@ -8,6 +8,7 @@ export default function buildPlugins({
   paths,
   isDev,
   api,
+  project,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
   const plugins = [
     new HtmlWebpackPlugin({
@@ -21,6 +22,7 @@ export default function buildPlugins({
     new webpack.DefinePlugin({
       __IS__DEV__: JSON.stringify(isDev),
       __API__: JSON.stringify(api),
+      __PROJECT__: JSON.stringify(project),
     }),
   ];
 
