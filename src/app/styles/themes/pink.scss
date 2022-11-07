@@ -2,11 +2,14 @@
   --bg-color: #ff218f;
   --inverted-bg-color: #4141c7;
   --primary-color: #fdf7fa;
-  --secondary-color: #cc00f5;
+  --secondary-color: #d8a1df;
   --inverted-primary-color: invert(#fdf7fa);
   --inverted-secondary-color: invert(#cc00f5);
 
   /* skeleton */
   --skeleton-color: #c85888;
   --skeleton-shadow: #c97da4;
+
+  /* code */
+  --code-bg: rgb(255 33 143 / 56%);
 }

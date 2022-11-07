@@ -13,3 +13,22 @@
 .skeleton {
   margin: 15px 0 0;
 }
+
+.articleInfo {
+  display: flex;
+  align-items: center;
+}
+
+.avatarWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+.block {
+  margin: 16px 0 0;
+}

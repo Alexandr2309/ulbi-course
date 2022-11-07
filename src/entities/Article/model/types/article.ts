@@ -36,11 +36,11 @@ export enum ArticleType {
 
 export interface Article {
   id: string,
-  title: string,
-  subtitle: string,
-  img: string,
-  views: number,
-  createdAt: string,
-  type: ArticleType[],
-  blocks: ArticleBlock[]
+  title?: string,
+  subtitle?: string,
+  img?: string,
+  views?: number,
+  createdAt?: string,
+  type?: ArticleType[],
+  blocks?: ArticleBlock[]
 }

@@ -1,13 +1,15 @@
-import cls from './ArticleCodeBlockComponent.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from 'shared/lib/classNames/classNames';
+import { ArticleCodeBlock } from 'entities/Article/model/types/article';
+import { Code } from 'shared/ui/Code/Code';
+import cls from './ArticleCodeBlockComponent.module.scss';
 
 export interface ArticleCodeBlockComponentProps {
-  className?: string
+  className?: string;
+  block: ArticleCodeBlock
 }
 
-export const ArticleCodeBlockComponent = ({ className }: ArticleCodeBlockComponentProps) => {
-  return (
-    <div className={classNames(cls.ArticleCodeBlockComponent, {}, [className])}>
-    </div>
-  )
-}
+export const ArticleCodeBlockComponent = ({ className, block }: ArticleCodeBlockComponentProps) => (
+  <div className={classNames(cls.ArticleCodeBlockComponent, {}, [className])}>
+    <Code text={block.code} />
+  </div>
+);
