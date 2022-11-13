@@ -1,15 +1,11 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
 import { Text } from 'shared/ui/Text/Text';
 import { CommentsList } from 'entities/Comment';
 import { useSelector } from 'react-redux';
-import {
-  getArticleCommentsError,
-  getArticleCommentsIsLoading,
-} from 'pages/AritcleDetailsPage/model/selectors/comments';
 import {
   articleDetailsCommentsReducer,
   getArticleComments,
@@ -20,9 +16,12 @@ import {
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { AddCommentForm } from 'features/addCommentForm';
+import { getArticleCommentsIsLoading } from '../model/selectors/comments';
 import {
   fetchCommentsByArticleId,
-} from 'pages/AritcleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+} from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { addCommentForArticle } from '../model/services/addCommentFromArticle/addCommentForArticle';
 import cls from './ArticleDetailsPage.module.scss';
 
 export interface ArticleDetailsPageProps {
@@ -45,6 +44,10 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     dispatch(fetchCommentsByArticleId(id));
   });
 
+  const onSendComment = useCallback((text: string) => {
+    dispatch(addCommentForArticle(text || ''));
+  }, [dispatch]);
+
   if (!id) {
     return (
       <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
@@ -58,6 +61,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
       <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         <ArticleDetails id={id} />
         <Text title={t('Комментарии')} className={cls.commentsTitle} />
+        <AddCommentForm onSendComment={onSendComment} />
         <CommentsList
           comments={comments}
           isLoading={isLoading}

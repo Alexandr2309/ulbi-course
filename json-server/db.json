@@ -14,7 +14,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -95,6 +97,12 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "text": "хорошая статья",
+      "id": "w0mleYq"
     }
   ],
   "users": [
@@ -113,14 +121,28 @@
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
-  "profile": {
-    "first": "Александр",
-    "lastname": "Коломыцкий",
-    "age": 18,
-    "currency": "EUR",
-    "country": "Armenia",
-    "city": "Khabarovsk",
-    "username": "admin",
-    "avatar": "https:/w7.pngwing.com/pngs/862/646/png-transparent-beard-hipster-male-man-avatars-xmas-giveaway-icon-thumbnail.png"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Александр",
+      "lastname": "Коломыцкий",
+      "age": 18,
+      "currency": "EUR",
+      "country": "Armenia",
+      "city": "Khabarovsk",
+      "username": "admin",
+      "avatar": "https:/w7.pngwing.com/pngs/862/646/png-transparent-beard-hipster-male-man-avatars-xmas-giveaway-icon-thumbnail.png"
+    },
+    {
+      "id": "2",
+      "first": "Валерий",
+      "lastname": "Орлокин",
+      "age": 18,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Vladivostok",
+      "username": "valerka",
+      "avatar": "https:/w7.pngwing.com/pngs/862/646/png-transparent-beard-hipster-male-man-avatars-xmas-giveaway-icon-thumbnail.png"
+    }
+  ]
 }

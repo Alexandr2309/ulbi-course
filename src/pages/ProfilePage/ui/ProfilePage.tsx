@@ -23,6 +23,8 @@ import {
 } from 'entities/Profile/model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import { ValidateProfileErrors } from 'entities/Profile/model/types/profile';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 export interface ProfilePageProps {
@@ -40,12 +42,13 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
   const error = useSelector(getProfileError);
   const isLoading = useSelector(getProfileIsLoading);
   const validateErrors = useSelector(getProfileValidateErrors);
+  const { id } = useParams<{id: string}>();
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   const validateErrorsTranslate = {
     [ValidateProfileErrors.NO_DATA]: t('Данные не указаны'),

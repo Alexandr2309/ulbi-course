@@ -6,7 +6,6 @@ import { getProfileReadonly, Profile } from 'entities/Profile';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { useSelector } from 'react-redux';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Select } from 'shared/ui/Select/Select';
 import { Currency } from 'entities/CurrencySelect/model/types/currency';
 import { CurrencySelect } from 'entities/CurrencySelect';
 import { Country, CountrySelect } from 'entities/CountrySelect';
@@ -17,6 +16,7 @@ export interface ProfileCardProps {
   data?: Profile;
   error?: string;
   isLoading?: boolean;
+  readonly?: boolean;
   onChangeFirstname?: (value: string) => void;
   onChangeLastname?: (value: string) => void;
   onChangeCity?: (value: string) => void;
@@ -29,13 +29,13 @@ export interface ProfileCardProps {
 
 export const ProfileCard = (props: ProfileCardProps) => {
   const { t } = useTranslation('profile');
-  const readonly = useSelector(getProfileReadonly);
 
   const {
     className,
     data,
     isLoading,
     error,
+    readonly = true,
     onChangeLastname,
     onChangeFirstname,
     onChangeCity,
@@ -77,8 +77,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         {data?.avatar && (
           <div className={cls.avatarWrapper}>
             <Avatar
-              src={data?.avatar}
-              alt={t('Аватарка')}
+              src={data.avatar}
             />
           </div>
         )}
