@@ -3,11 +3,13 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import 'app/styles/index.scss';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/themeProvider';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import AddCommentForm from './AddCommentForm';
 
 export default {
   title: 'features/addCommentForm',
   component: AddCommentForm,
+  decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof AddCommentForm>;
 
 const Template: ComponentStory<typeof AddCommentForm> = (args) => <AddCommentForm {...args} />;

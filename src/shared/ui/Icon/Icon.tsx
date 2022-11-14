@@ -7,8 +7,9 @@ export interface IconProps {
   Svg: React.VFC<React.SVGProps<SVGSVGElement>>;
 }
 
-export const Icon = ({ className, Svg }: IconProps) => (
-  <div className={classNames(cls.Icon, {}, [className])}>
-    <Svg className={cls.icon} />
-  </div>
+export const Icon = ({
+  className,
+  Svg,
+}: IconProps) => (
+  <Svg className={cls.Icon} />
 );

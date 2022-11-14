@@ -1,16 +1,12 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { memo } from 'react';
-import { Article, ArticleView } from 'entities/Article';
-import { ArticleList } from 'entities/Article/ui/ArticleList/ArticleList';
-import cls from './ArticlesPage.module.scss';
-
-export interface ArticlesPageProps {
-  className?: string;
-}
+import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { userActions } from 'entities/User';
+import { articleDetailsActions } from 'entities/Article/model/slice/articleDetailsSlice';
+import { Article } from 'entities/Article';
+import { StateSchema } from 'app/providers/storeProvider';
+import { addCommentForArticle } from './addCommentForArticle';
 
 const article = {
-  id: '1',
+  id: '2',
   title: 'Javascript news',
   subtitle: 'Что нового в JS за 2022 год?',
   img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
@@ -87,23 +83,62 @@ const article = {
   ],
 } as Article;
 
-const ArticlesPage = ({ className }: ArticlesPageProps) => {
-  const { t } = useTranslation('article');
+const text = 'Отличная статья!';
 
-  return (
-    <div className={classNames(cls.ArticlesPage, {}, [className])}>
-      <ArticleList
-        articles={new Array(16)
-          .fill(0)
-          .map((item, i) => ({
-            ...article,
-            id: String(i),
-          }))}
-        isLoading={false}
-        view={ArticleView.SMALL}
-      />
-    </div>
-  );
+const state: DeepPartial<StateSchema> = {
+  articleDetails: {
+    data: article,
+  },
+  user: {
+    dataAuth: {
+      username: 'user',
+      avatar: 'http',
+      id: '1',
+    },
+  },
 };
 
-export default memo(ArticlesPage);
+describe('addCommentForArticle', () => {
+  test('success result', async () => {
+    const data = {
+      userId: '1',
+      articleId: '2',
+      text,
+    };
+
+    const thunk = new TestAsyncThunk(addCommentForArticle, state);
+    thunk.api.post.mockReturnValue(Promise.resolve({ data }));
+    const result = await thunk.callThunk(text);
+
+    expect(thunk.api.post)
+      .toBeCalled();
+    expect(result.meta.requestStatus)
+      .toBe('fulfilled');
+    expect(result.payload)
+      .toEqual(data);
+  });
+
+  test('error result', async () => {
+    const thunk = new TestAsyncThunk(addCommentForArticle, state);
+    thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }));
+    const result = await thunk.callThunk(text);
+
+    expect(result.payload)
+      .toBe('error');
+    expect(thunk.api.post)
+      .toBeCalled();
+    expect(result.meta.requestStatus)
+      .toBe('rejected');
+  });
+
+  test('error result with empty data', async () => {
+    const thunk = new TestAsyncThunk(addCommentForArticle, state);
+    thunk.api.post.mockReturnValue(Promise.resolve({ data: undefined }));
+    const result = await thunk.callThunk('');
+
+    expect(result.payload)
+      .toBe('no data');
+    expect(result.meta.requestStatus)
+      .toBe('rejected');
+  });
+});

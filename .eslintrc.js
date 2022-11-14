@@ -70,8 +70,9 @@ module.exports = {
         allowTemplateLiterals: true,
       },
     ],
+    'react/no-array-index-key': 'warn',
     'max-len': [
-      'error',
+      'warn',
       {
         ignoreComments: true,
         code: 100,

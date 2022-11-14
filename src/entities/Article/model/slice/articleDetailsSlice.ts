@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { fetchProfileData, Profile } from 'entities/Profile';
 import { Article } from 'entities/Article';
 import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
 import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
@@ -13,7 +12,11 @@ const initialState: ArticleDetailsSchema = {
 export const articleDetailsSlice = createSlice({
   name: 'articleDetails',
   initialState,
-  reducers: {},
+  reducers: {
+    setArticleData: (state, action) => {
+      state.data = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchArticleById.pending, ((state) => {
       state.isLoading = true;

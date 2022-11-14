@@ -6,8 +6,15 @@ import { Theme } from 'app/providers/themeProvider';
 import { ArticleCodeBlockComponent } from './ArticleCodeBlockComponent';
 
 export default {
-  title: 'shared/ArticleCodeBlockComponent',
+  title: 'entities/ArticleCodeBlockComponent',
   component: ArticleCodeBlockComponent,
+  args: {
+    block: {
+      id: '4',
+      type: 'CODE',
+      code: '<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n      document.getElementById("hello").innerHTML = "Hello, world!";\n    </script>\n  </body>\n</html>;',
+    },
+  },
 } as ComponentMeta<typeof ArticleCodeBlockComponent>;
 
 const Template: ComponentStory<typeof ArticleCodeBlockComponent> = (args) => <ArticleCodeBlockComponent {...args} />;

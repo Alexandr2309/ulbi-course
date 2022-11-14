@@ -1,13 +1,9 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { memo } from 'react';
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
+import { Theme } from 'app/providers/themeProvider';
 import { Article, ArticleView } from 'entities/Article';
-import { ArticleList } from 'entities/Article/ui/ArticleList/ArticleList';
-import cls from './ArticlesPage.module.scss';
-
-export interface ArticlesPageProps {
-  className?: string;
-}
+import { ArticleList } from './ArticleList';
 
 const article = {
   id: '1',
@@ -87,23 +83,72 @@ const article = {
   ],
 } as Article;
 
-const ArticlesPage = ({ className }: ArticlesPageProps) => {
-  const { t } = useTranslation('article');
+export default {
+  title: 'entities/ArticleList',
+  component: ArticleList,
+  args: {
+    articles: new Array(16)
+      .fill(0)
+      .map((item, i) => ({
+        ...article,
+        id: String(i),
+      })),
+  },
+} as ComponentMeta<typeof ArticleList>;
 
-  return (
-    <div className={classNames(cls.ArticlesPage, {}, [className])}>
-      <ArticleList
-        articles={new Array(16)
-          .fill(0)
-          .map((item, i) => ({
-            ...article,
-            id: String(i),
-          }))}
-        isLoading={false}
-        view={ArticleView.SMALL}
-      />
-    </div>
-  );
+const Template: ComponentStory<typeof ArticleList> = (args) => (
+  <ArticleList {...args} />
+);
+
+export const Normal = Template.bind({});
+Normal.args = {
+  view: ArticleView.SMALL,
 };
 
-export default memo(ArticlesPage);
+export const Dark = Template.bind({});
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.args = {};
+
+export const Big = Template.bind({});
+Big.args = {
+  view: ArticleView.BIG,
+};
+
+export const DarkBig = Template.bind({});
+DarkBig.decorators = [ThemeDecorator(Theme.DARK)];
+DarkBig.args = {
+  view: ArticleView.BIG,
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  view: ArticleView.BIG,
+  isLoading: true,
+};
+
+export const LoadingDark = Template.bind({});
+LoadingDark.decorators = [ThemeDecorator(Theme.DARK)];
+LoadingDark.args = {
+  view: ArticleView.BIG,
+  isLoading: true,
+};
+
+export const LoadingPink = Template.bind({});
+LoadingPink.decorators = [ThemeDecorator(Theme.PINK)];
+LoadingPink.args = {
+  view: ArticleView.BIG,
+  isLoading: true,
+};
+
+export const LoadingPinkSmall = Template.bind({});
+LoadingPinkSmall.decorators = [ThemeDecorator(Theme.PINK)];
+LoadingPinkSmall.args = {
+  view: ArticleView.SMALL,
+  isLoading: true,
+};
+
+export const LoadingSmall = Template.bind({});
+LoadingSmall.args = {
+  view: ArticleView.SMALL,
+  isLoading: true,
+};

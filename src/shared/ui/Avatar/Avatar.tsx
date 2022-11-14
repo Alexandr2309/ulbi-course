@@ -9,18 +9,20 @@ interface IAvatarProps {
   className?: string;
   src?: string;
   alt?: string;
-  size?: number
+  size?: number;
+  border?: string | number;
 }
 
 export const Avatar = (props: IAvatarProps) => {
   const {
-    alt, src, size, className,
+    alt, src, size, className, border,
   } = props;
 
   const styles = useMemo<CSSProperties>(() => ({
     width: size,
     height: size,
-  }), [size]);
+    border,
+  }), [size, border]);
 
   return (
     <img

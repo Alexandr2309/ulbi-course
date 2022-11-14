@@ -1,13 +1,9 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { memo } from 'react';
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
+import { Theme } from 'app/providers/themeProvider';
 import { Article, ArticleView } from 'entities/Article';
-import { ArticleList } from 'entities/Article/ui/ArticleList/ArticleList';
-import cls from './ArticlesPage.module.scss';
-
-export interface ArticlesPageProps {
-  className?: string;
-}
+import { ArticleListItem } from './ArticleListItem';
 
 const article = {
   id: '1',
@@ -87,23 +83,36 @@ const article = {
   ],
 } as Article;
 
-const ArticlesPage = ({ className }: ArticlesPageProps) => {
-  const { t } = useTranslation('article');
+export default {
+  title: 'entities/ArticleListItem',
+  component: ArticleListItem,
+  args: {
+    article,
+  },
+} as ComponentMeta<typeof ArticleListItem>;
 
-  return (
-    <div className={classNames(cls.ArticlesPage, {}, [className])}>
-      <ArticleList
-        articles={new Array(16)
-          .fill(0)
-          .map((item, i) => ({
-            ...article,
-            id: String(i),
-          }))}
-        isLoading={false}
-        view={ArticleView.SMALL}
-      />
-    </div>
-  );
+const Template: ComponentStory<typeof ArticleListItem> = (args) => (
+  <ArticleListItem {...args} />
+);
+
+export const Light = Template.bind({});
+Light.args = {};
+
+export const Dark = Template.bind({});
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.args = {};
+
+export const Pink = Template.bind({});
+Pink.decorators = [ThemeDecorator(Theme.PINK)];
+Pink.args = {};
+
+export const LightBig = Template.bind({});
+LightBig.args = {
+  view: ArticleView.BIG,
 };
 
-export default memo(ArticlesPage);
+export const DarkBig = Template.bind({});
+DarkBig.decorators = [ThemeDecorator(Theme.DARK)];
+DarkBig.args = {
+  view: ArticleView.BIG,
+};
