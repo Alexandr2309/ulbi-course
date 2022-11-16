@@ -9,6 +9,10 @@ import {
   ArticleTextBlockComponent,
 } from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { useNavigate } from 'react-router-dom';
+import { RoutePath } from 'shared/config/routerConfig/routeConfig';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { useCallback } from 'react';
 import cls from './ArticleListItem.module.scss';
 import {
   Article,
@@ -31,6 +35,11 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
     article,
     view = ArticleView.SMALL,
   } = props;
+  const na = useNavigate();
+
+  const onOpenArticle = useCallback(() => {
+    na(RoutePath.article_details + article.id);
+  }, [article.id, na]);
 
   const types = <Text text={article?.type?.join(', ')} className={cls.types} />;
   const views = (
@@ -60,6 +69,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
           <div className={cls.footer}>
             <Button
               theme={ThemeButton.OUTLINED}
+              onClick={onOpenArticle}
             >
               {t('Читать далее...')}
             </Button>
@@ -72,7 +82,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
 
   return (
     <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
-      <Card>
+      <Card onClick={onOpenArticle}>
         <div className={cls.imageWrapper}>
           <img src={article.img} alt={article.title} className={cls.img} />
           <Text text={article.createdAt} className={cls.date} />

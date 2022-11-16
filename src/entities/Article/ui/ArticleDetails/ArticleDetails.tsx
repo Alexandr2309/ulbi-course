@@ -13,6 +13,9 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Icon } from 'shared/ui/Icon/Icon';
 import eyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import calendarIcon from 'shared/assets/icons/calendar-20-20.svg';
+import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { useNavigate } from 'react-router-dom';
+import { RoutePath } from 'shared/config/routerConfig/routeConfig';
 import {
   ArticleCodeBlockComponent,
 } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
@@ -34,14 +37,17 @@ import {
 
 export interface ArticleDetailsProps {
   className?: string;
-  id: string
+  id: string;
 }
 
 const reducers: ReducersList = {
   articleDetails: articleDetailsReducer,
 };
 
-export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
+export const ArticleDetails = memo(({
+  className,
+  id,
+}: ArticleDetailsProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const isLoading = useSelector(getArticleDetailsIsLoading);
@@ -85,6 +91,11 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     }
   }, [dispatch, id]);
 
+  const navigate = useNavigate();
+  const onBackToList = useCallback(() => {
+    navigate(RoutePath.articles);
+  }, [navigate]);
+
   let content;
 
   if (isLoading) {
@@ -107,6 +118,12 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   } else {
     content = (
       <>
+        <Button
+          onClick={onBackToList}
+          theme={ThemeButton.OUTLINED}
+        >
+          {t('Назад к списку')}
+        </Button>
         <div className={cls.avatarWrapper}>
           <Avatar src={data?.img} size={200} className={cls.avatar} />
         </div>
