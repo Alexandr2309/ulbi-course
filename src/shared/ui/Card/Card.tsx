@@ -12,10 +12,10 @@ export const Card = ({
   children,
   ...otherProps
 }: CardProps) => (
-  <div
+  <article
     className={classNames(cls.Card, {}, [className])}
     {...otherProps}
   >
     {children}
-  </div>
+  </article>
 );

@@ -17,6 +17,7 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { AddCommentForm } from 'features/addCommentForm';
+import { Page } from 'shared/ui/Page/Page';
 import { getArticleCommentsIsLoading } from '../model/selectors/comments';
 import {
   fetchCommentsByArticleId,
@@ -50,15 +51,15 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
   if (!id) {
     return (
-      <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         {t('Статья не найдена')}
-      </div>
+      </Page>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         <ArticleDetails id={id} />
         <Text title={t('Комментарии')} className={cls.commentsTitle} />
         <AddCommentForm onSendComment={onSendComment} />
@@ -66,7 +67,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
           comments={comments}
           isLoading={isLoading}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };
