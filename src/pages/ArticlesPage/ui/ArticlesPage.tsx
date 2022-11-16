@@ -24,6 +24,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { fetchArticlesPage } from 'pages/ArticlesPage/model/services/fetchArticlesPage/fetchArticlesPage';
 import { Page } from 'shared/ui/Page/Page';
 import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { initedArticlesPage } from 'pages/ArticlesPage/model/services/initedArticlesPage/initedArticlesPage';
 import cls from './ArticlesPage.module.scss';
 
 export interface ArticlesPageProps {
@@ -48,8 +49,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initView());
-    dispatch(fetchArticlesPage({ page }));
+    dispatch(initedArticlesPage());
   });
 
   const onLoadNextPart = useCallback(() => {
@@ -57,7 +57,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
   }, [dispatch]);
 
   return (
-    <DynamicModuleLoader reducers={reducers}>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page
         onScrollEnd={onLoadNextPart}
         className={classNames(cls.ArticlesPage, {}, [className])}
