@@ -6,23 +6,20 @@ import { ArticleList } from 'entities/Article/ui/ArticleList/ArticleList';
 import { ArticleViewSelector } from 'features/ArticleViewSelector';
 import { useSelector } from 'react-redux';
 import {
-  articlesPageActions, articlesPageReducer,
+  articlesPageActions,
+  articlesPageReducer,
   getArticles,
 } from 'pages/ArticlesPage/model/slices/articlesPageSlice';
 import {
-  getArticlesPagesError, getArticlesPagesHasMore,
-  getArticlesPagesIsLoading, getArticlesPagesNum,
+  getArticlesPagesError,
+  getArticlesPagesIsLoading,
+  getArticlesPagesNum,
   getArticlesPagesView,
 } from 'pages/ArticlesPage/model/selectors/getArticlesPages';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import {
-  DynamicModuleLoader,
-  ReducersList,
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { fetchArticlesPage } from 'pages/ArticlesPage/model/services/fetchArticlesPage/fetchArticlesPage';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initedArticlesPage } from 'pages/ArticlesPage/model/services/initedArticlesPage/initedArticlesPage';
 import cls from './ArticlesPage.module.scss';
@@ -42,7 +39,6 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
   const error = useSelector(getArticlesPagesError);
   const view = useSelector(getArticlesPagesView);
   const isLoading = useSelector(getArticlesPagesIsLoading);
-  const page = useSelector(getArticlesPagesNum);
 
   const onChangeView = useCallback((view: ArticleView) => {
     dispatch(articlesPageActions.setView(view));
