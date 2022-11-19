@@ -6,7 +6,7 @@ import {
   getArticlesPagesLimit,
   getArticlesPagesNum,
 } from 'pages/ArticlesPage/model/selectors/getArticlesPages';
-import articlesPage from 'pages/ArticlesPage/ui/ArticlesPage';
+import articlesPage from 'pages/ArticlesPage/ui/ArticlesPage/ArticlesPage';
 import { articlesPageActions } from 'pages/ArticlesPage/model/slices/articlesPageSlice';
 import { fetchArticlesPage } from 'pages/ArticlesPage/model/services/fetchArticlesPage/fetchArticlesPage';
 
@@ -23,9 +23,7 @@ export const fetchNextArticlesPage = createAsyncThunk<void,
 
       if (hasMore && !isLoading) {
         dispatch(articlesPageActions.setPage(page + 1));
-        dispatch(fetchArticlesPage({
-          page: page + 1,
-        }));
+        dispatch(fetchArticlesPage({}));
       }
     },
   );

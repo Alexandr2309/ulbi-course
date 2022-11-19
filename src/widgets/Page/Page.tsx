@@ -27,8 +27,8 @@ export const Page = memo((props: PageProps) => {
   const pageScroll = useSelector((state: StateSchema) => getScrollSaveByPAth(state, pathname));
 
   UseInfiniteScroll({
-    triggerRef,
     wrapperRef,
+    triggerRef,
     callback: onScrollEnd,
   });
 
@@ -37,7 +37,6 @@ export const Page = memo((props: PageProps) => {
   });
 
   const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-    console.log('scroll');
     dispatch(scrollSaveActions.setScroll({
       scroll: e.currentTarget.scrollTop,
       path: pathname,
@@ -51,7 +50,7 @@ export const Page = memo((props: PageProps) => {
       onScroll={onScroll}
     >
       {children}
-      <div ref={triggerRef} />
+      {onScrollEnd ? <div ref={triggerRef} className={cls.trigger} /> : null}
     </section>
   );
 });

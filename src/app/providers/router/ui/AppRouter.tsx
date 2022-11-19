@@ -8,9 +8,7 @@ export const AppRouter = () => {
   const renderWithRequired = useCallback((route: AppRouteProps) => {
     const element = (
       <Suspense fallback={<PageLoader />}>
-        <div className="page-wrapper">
-          {route.element}
-        </div>
+        {route.element}
       </Suspense>
     );
 
