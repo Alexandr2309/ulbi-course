@@ -91,11 +91,6 @@ export const ArticleDetails = memo(({
     }
   }, [dispatch, id]);
 
-  const navigate = useNavigate();
-  const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles);
-  }, [navigate]);
-
   let content;
 
   if (isLoading) {
@@ -118,12 +113,7 @@ export const ArticleDetails = memo(({
   } else {
     content = (
       <>
-        <Button
-          onClick={onBackToList}
-          theme={ThemeButton.OUTLINED}
-        >
-          {t('Назад к списку')}
-        </Button>
+
         <div className={cls.avatarWrapper}>
           <Avatar src={data?.img} size={200} className={cls.avatar} />
         </div>

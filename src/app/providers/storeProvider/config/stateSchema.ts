@@ -13,6 +13,7 @@ import { ArticleDetailsCommentsSchema } from 'pages/AritcleDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { scrollSaveSchema } from 'features/ScrollSave';
+import { ArticlesDetailsPageSchema } from 'pages/AritcleDetailsPage/model/types';
 
 export interface StateSchema {
   counter: CounterSchema;
@@ -23,9 +24,9 @@ export interface StateSchema {
   loginForm?: LoginSchema;
   profile?: ProfileSchema;
   articleDetails?: ArticleDetailsSchema
-  articleDetailsComments?: ArticleDetailsCommentsSchema;
   addCommentForm?: AddCommentFormSchema;
-  articlesPage?: ArticlesPageSchema
+  articlesPage?: ArticlesPageSchema;
+  articlesDetailsPage?: ArticlesDetailsPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema;

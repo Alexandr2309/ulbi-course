@@ -4,6 +4,7 @@ import { ArticleListItem } from 'entities/Article/ui/ArticleListItem/ArticleList
 import {
   ArticleListItemSkeleton,
 } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
+import { HTMLAttributeAnchorTarget } from 'react';
 import cls from './ArticleList.module.scss';
 import { Article, ArticleView } from '../../model/types/article';
 
@@ -11,7 +12,8 @@ export interface ArticleListProps {
   className?: string;
   articles: Article[];
   isLoading: boolean;
-  view: ArticleView;
+  view?: ArticleView;
+  target: HTMLAttributeAnchorTarget
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.BIG ? 3 : 9)
@@ -30,14 +32,16 @@ export const ArticleList = (props: ArticleListProps) => {
     isLoading,
     articles,
     view = ArticleView.SMALL,
+    target,
   } = props;
   const { t } = useTranslation();
-
+  console.log(view);
   const renderArticle = (article: Article) => (
     <ArticleListItem
       article={article}
       view={view}
       key={article.id}
+      target={target}
       className={cls.card}
     />
   );

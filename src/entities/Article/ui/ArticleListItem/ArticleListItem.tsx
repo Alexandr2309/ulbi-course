@@ -5,27 +5,21 @@ import { Text } from 'shared/ui/Text/Text';
 import { Icon } from 'shared/ui/Icon/Icon';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import {
-  ArticleTextBlockComponent,
-} from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { ArticleTextBlockComponent } from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
-import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routerConfig/routeConfig';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
-import { useCallback } from 'react';
+import { HTMLAttributeAnchorTarget } from 'react';
 import cls from './ArticleListItem.module.scss';
 import {
-  Article,
-  ArticleView,
-  ArticleBlockType,
-  ArticleTextBlock,
+  Article, ArticleBlockType, ArticleTextBlock, ArticleView,
 } from '../../model/types/article';
 
 export interface ArticleListItemProps {
   className?: string;
   view: ArticleView;
   article: Article;
-
+  target: HTMLAttributeAnchorTarget
 }
 
 export const ArticleListItem = (props: ArticleListItemProps) => {
@@ -34,12 +28,8 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
     className,
     article,
     view = ArticleView.SMALL,
+    target,
   } = props;
-  const na = useNavigate();
-
-  const onOpenArticle = useCallback(() => {
-    na(RoutePath.article_details + article.id);
-  }, [article.id, na]);
 
   const types = <Text text={article?.type?.join(', ')} className={cls.types} />;
   const views = (
@@ -55,7 +45,11 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
     ) as ArticleTextBlock;
 
     return (
-      <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+      <AppLink
+        target={target}
+        to={RoutePath.article_details + article.id}
+        className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+      >
         <Card>
           <div className={cls.header}>
             <Avatar size={30} src={article.user.avatar} className={cls.avatar} />
@@ -69,20 +63,23 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
           <div className={cls.footer}>
             <Button
               theme={ThemeButton.OUTLINED}
-              onClick={onOpenArticle}
             >
               {t('Читать далее...')}
             </Button>
             {views}
           </div>
         </Card>
-      </div>
+      </AppLink>
     );
   }
 
   return (
-    <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
-      <Card onClick={onOpenArticle}>
+    <AppLink
+      target={target}
+      to={RoutePath.article_details + article.id}
+      className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+    >
+      <Card>
         <div className={cls.imageWrapper}>
           <img src={article.img} alt={article.title} className={cls.img} />
           <Text text={article.createdAt} className={cls.date} />
@@ -93,6 +90,6 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
         </div>
         <Text text={article.title} className={cls.title} />
       </Card>
-    </div>
+    </AppLink>
   );
 };
