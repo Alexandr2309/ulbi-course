@@ -3,11 +3,13 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import 'app/styles/index.scss';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/themeProvider';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import { ArticlesFiltersPage } from './ArticlesFiltersPage';
 
 export default {
   title: 'shared/ArticlesFiltersPage',
   component: ArticlesFiltersPage,
+  decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof ArticlesFiltersPage>;
 
 const Template: ComponentStory<typeof ArticlesFiltersPage> = (args) => <ArticlesFiltersPage {...args} />;

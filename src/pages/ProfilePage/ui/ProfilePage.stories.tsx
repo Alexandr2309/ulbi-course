@@ -12,6 +12,7 @@ import ProfilePage from './ProfilePage';
 export default {
   title: 'pages/ProfilePage',
   component: ProfilePage,
+  decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof ProfilePage>;
 
 const Template: ComponentStory<typeof ProfilePage> = () => (

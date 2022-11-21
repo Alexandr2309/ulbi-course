@@ -44,7 +44,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           to={RoutePath.article_new}
           className={cls.createLink}
         >
-          Создать статью
+          {t('Создать статью')}
         </AppLink>
         <Button
           theme={ThemeButton.CLEAR_INVERTED}

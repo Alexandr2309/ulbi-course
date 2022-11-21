@@ -3,11 +3,13 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import 'app/styles/index.scss';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/themeProvider';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import { ArticleTypeTabs } from './ArticleTypeTabs';
 
 export default {
   title: 'shared/ArticleTypeTabs',
   component: ArticleTypeTabs,
+  decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof ArticleTypeTabs>;
 
 const Template: ComponentStory<typeof ArticleTypeTabs> = (args) => <ArticleTypeTabs {...args} />;
