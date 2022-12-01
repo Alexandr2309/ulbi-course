@@ -5,7 +5,7 @@
 
 Стек: React, React-Router-Dom, Redux Toolkit, TypeScript, scss-модули, i18n
 
-Проект собран с использованием персональной конфигурации webpack.
+Проект собран с использованием персональной конфигурации webpack.Настроен CI/CD pipeline
 
 Линтеры: ESLint, Stylelint. Используется babel.
 
@@ -16,7 +16,7 @@ The site is developed according to the methodology of the Feature-sliced design.
 
 Stack: React, React-Router-Dom, Redux Toolkit, TypeScript, scss modules, i18n
 
-It is assembled using a personal webpack configuration.
+It is assembled using a personal webpack configuration. CI/CD pipeline configured
 
 Linters: ESLint, Styleline. Babel is used.
 
