@@ -1,9 +1,10 @@
-import {
-  profileActions, profileReducer, ProfileSchema, updateProfileData,
-} from 'entities/Profile';
 import { Country } from 'entities/CountrySelect';
 import { Currency } from 'entities/CurrencySelect';
-import { ValidateProfileErrors } from 'entities/Profile/model/types/profile';
+import {
+  profileActions, profileReducer,
+} from '../slice/profileSlice';
+import { ProfileSchema, ValidateProfileErrors } from '../types/profile';
+import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 
 const data = {
   lastname: 'Коломыцкий',
@@ -22,22 +23,30 @@ describe('loginSlice', () => {
     expect(profileReducer(
       state as ProfileSchema,
       profileActions.setReadonly(true),
-    )).toEqual({ readonly: true });
+    ))
+      .toEqual({ readonly: true });
   });
 
   test('test cancel edit', () => {
     const state: DeepPartial<ProfileSchema> = {
       readonly: false,
       data,
-      form: { ...data, age: 1 },
+      form: {
+        ...data,
+        age: 1,
+      },
       validateErrors: [ValidateProfileErrors.INCORRECT_AGE],
     };
     expect(profileReducer(
       state as ProfileSchema,
       profileActions.cancelEdit(true),
-    )).toEqual({
-      readonly: true, form: data, validateErrors: undefined, data,
-    });
+    ))
+      .toEqual({
+        readonly: true,
+        form: data,
+        validateErrors: undefined,
+        data,
+      });
   });
 
   test('test updateProfile', () => {
@@ -47,7 +56,13 @@ describe('loginSlice', () => {
     expect(profileReducer(
       state as ProfileSchema,
       profileActions.updateProfile({ username: 'Александр' }),
-    )).toEqual({ form: { ...data, username: 'Александр' } });
+    ))
+      .toEqual({
+        form: {
+          ...data,
+          username: 'Александр',
+        },
+      });
   });
 
   test('test updateProfile', () => {
@@ -58,6 +73,10 @@ describe('loginSlice', () => {
     expect(profileReducer(
       state as ProfileSchema,
       updateProfileData.pending,
-    )).toEqual({ validateErrors: undefined, isLoading: true });
+    ))
+      .toEqual({
+        validateErrors: undefined,
+        isLoading: true,
+      });
   });
 });

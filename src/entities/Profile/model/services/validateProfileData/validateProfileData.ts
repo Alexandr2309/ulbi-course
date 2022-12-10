@@ -1,5 +1,4 @@
-import { Profile } from 'entities/Profile';
-import { ValidateProfileErrors } from 'entities/Profile/model/types/profile';
+import { Profile, ValidateProfileErrors } from '../../types/profile';
 
 export const validateProfileData = (profile?: Profile) => {
   if (!profile) {
@@ -7,7 +6,11 @@ export const validateProfileData = (profile?: Profile) => {
   }
 
   const {
-    country, age, username, first, lastname,
+    country,
+    age,
+    username,
+    first,
+    lastname,
   } = profile;
 
   const errors: ValidateProfileErrors[] = [];

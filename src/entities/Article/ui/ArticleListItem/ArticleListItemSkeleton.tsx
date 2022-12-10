@@ -1,14 +1,8 @@
 import React from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import cls from 'entities/Article/ui/ArticleListItem/ArticleListItem.module.scss';
 import { Card } from 'shared/ui/Card/Card';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Text } from 'shared/ui/Text/Text';
-import {
-  ArticleTextBlockComponent,
-} from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import cls from './ArticleListItem.module.scss';
 import { ArticleView } from '../../model/types/article';
 
 interface ArticleListItemSkeletonProps {

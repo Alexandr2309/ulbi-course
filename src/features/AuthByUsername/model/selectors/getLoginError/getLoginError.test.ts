@@ -1,5 +1,5 @@
 import { StateSchema } from 'app/providers/storeProvider';
-import { getLoginError } from 'features/AuthByUsername';
+import { getLoginError } from '../getLoginError/getLoginError';
 
 describe('getLoginError', () => {
   test('', () => {

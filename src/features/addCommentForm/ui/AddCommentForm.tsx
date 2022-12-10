@@ -11,7 +11,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import {
   getAddCommentFormText,
-} from 'features/addCommentForm/model/selectors/addCommentFormSelectors';
+} from '../model/selectors/addCommentFormSelectors';
 import { addCommentFormActions, addCommentFormReducer } from '../model/slices/addComentFormSlice';
 import cls from './AddCommentForm.module.scss';
 
