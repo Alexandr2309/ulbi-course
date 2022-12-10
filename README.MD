@@ -1,4 +1,4 @@
-## Сайт доступен по [ссылке](https://https://teal-lamington-987097.netlify.app/)
+## Сайт доступен по [ссылке](https://teal-lamington-987097.netlify.app/)
 
 ### Для авторизации и просмотра полного функционала используйте следующие данные:
 1. Email - `saha.kol04@gmail.com`;
@@ -13,7 +13,7 @@
 
 Линтеры: ESLint, Stylelint. Используется babel и prettier.
 
-## The site is available at the [link](https://https://teal-lamington-987097.netlify.app/)
+## The site is available at the [link](https://teal-lamington-987097.netlify.app/)
 
 ### To log in and view the full functionality, use the following data:
 1. Email is `saha.kol04@gmail.com`;
