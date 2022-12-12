@@ -13,12 +13,8 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Icon } from 'shared/ui/Icon/Icon';
 import eyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import calendarIcon from 'shared/assets/icons/calendar-20-20.svg';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
-import { useNavigate } from 'react-router-dom';
-import { RoutePath } from 'shared/config/routerConfig/routeConfig';
-import {
-  ArticleCodeBlockComponent,
-} from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { HStack, VStack } from 'shared/ui/Stack';
+import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import cls from './ArticleDetails.module.scss';
 import {
@@ -31,9 +27,7 @@ import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import {
   ArticleImageBlockComponent,
 } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
-import {
-  ArticleTextBlockComponent,
-} from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 export interface ArticleDetailsProps {
   className?: string;
@@ -114,22 +108,24 @@ export const ArticleDetails = memo(({
     content = (
       <>
 
-        <div className={cls.avatarWrapper}>
+        <HStack gap="4" max>
           <Avatar src={data?.img} size={200} className={cls.avatar} />
-        </div>
+        </HStack>
         <Text
           className={cls.title}
           title={data?.title}
           text={data?.subtitle}
         />
-        <div className={cls.articleInfo}>
-          <Icon Svg={eyeIcon} className={cls.icon} />
-          <Text text={String(data?.views)} />
-        </div>
-        <div className={cls.articleInfo}>
-          <Icon Svg={calendarIcon} className={cls.icon} />
-          <Text text={data?.createdAt} />
-        </div>
+        <VStack gap="4" align="start">
+          <HStack gap="4" className={cls.articleInfo}>
+            <Icon Svg={eyeIcon} className={cls.icon} />
+            <Text text={String(data?.views)} />
+          </HStack>
+          <HStack gap="4" className={cls.articleInfo}>
+            <Icon Svg={calendarIcon} className={cls.icon} />
+            <Text text={data?.createdAt} />
+          </HStack>
+        </VStack>
         {data?.blocks?.map(renderBlock)}
       </>
     );

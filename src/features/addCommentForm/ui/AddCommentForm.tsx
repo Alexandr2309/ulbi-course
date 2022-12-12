@@ -9,6 +9,7 @@ import {
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
+import { HStack, VStack } from 'shared/ui/Stack';
 import {
   getAddCommentFormText,
 } from '../model/selectors/addCommentFormSelectors';
@@ -25,7 +26,10 @@ const reducers: ReducersList = {
 };
 
 const AddCommentForm = memo((props: AddCommentFormProps) => {
-  const { className, onSendComment } = props;
+  const {
+    className,
+    onSendComment,
+  } = props;
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const text = useSelector(getAddCommentFormText);
@@ -41,7 +45,12 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cls.addCommentForm, {}, [className])}>
+      <HStack
+        gap="4"
+        justify="between"
+        max
+        className={classNames(cls.addCommentForm, {}, [className])}
+      >
         <Input
           placeholder={t('Введите текст комметария')}
           className={cls.input}
@@ -54,7 +63,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
         >
           {t('Отправить')}
         </Button>
-      </div>
+      </HStack>
     </DynamicModuleLoader>
   );
 });
