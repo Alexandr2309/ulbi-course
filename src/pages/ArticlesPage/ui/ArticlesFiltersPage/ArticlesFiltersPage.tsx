@@ -9,11 +9,11 @@ import { SortOrder } from 'shared/types';
 import { Card } from 'shared/ui/Card/Card';
 import { Input } from 'shared/ui/Input/Input';
 import { useTranslation } from 'react-i18next';
-import {
-  fetchArticlesPage,
-} from 'pages/ArticlesPage/model/services/fetchArticlesPage/fetchArticlesPage';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import { ArticleTypeTabs } from 'features/ArticleTypeTabs';
+import {
+  fetchArticlesPage,
+} from '../../model/services/fetchArticlesPage/fetchArticlesPage';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
 import cls from './ArticlesFiltersPage.module.scss';
 import {

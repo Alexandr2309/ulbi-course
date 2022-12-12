@@ -1,5 +1,5 @@
 import { StateSchema } from 'app/providers/storeProvider';
-import { getProfileIsLoading } from 'entities/Profile';
+import { getProfileIsLoading } from './getProfileIsLoading';
 
 describe('getProfileIsLoading', () => {
   test('success', () => {

@@ -1,5 +1,5 @@
 import { StateSchema } from 'app/providers/storeProvider';
-import { getLoginError, getLoginIsLoading } from 'features/AuthByUsername';
+import { getLoginIsLoading } from '../getLoginIsLoading/getLoginIsLoading';
 
 describe('getLoginIsLoading', () => {
   test('success isLoading ', () => {

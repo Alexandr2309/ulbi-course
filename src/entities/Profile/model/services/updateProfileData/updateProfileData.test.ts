@@ -1,8 +1,8 @@
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { updateProfileData } from 'entities/Profile';
 import { Country } from 'entities/CountrySelect';
 import { Currency } from 'entities/CurrencySelect';
-import { ValidateProfileErrors } from 'entities/Profile/model/types/profile';
+import { updateProfileData } from './updateProfileData';
+import { ValidateProfileErrors } from '../../types/profile';
 
 const data = {
   lastname: 'Коломыцкий',

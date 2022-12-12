@@ -1,7 +1,7 @@
 import { StateSchema } from 'app/providers/storeProvider';
-import { getProfileData } from 'entities/Profile';
 import { Country } from 'entities/CountrySelect';
 import { Currency } from 'entities/CurrencySelect';
+import { getProfileData } from './getProfileData';
 
 const data = {
   lastname: 'Коломыцкий',

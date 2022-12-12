@@ -1,7 +1,7 @@
 import { Country } from 'entities/CountrySelect';
 import { Currency } from 'entities/CurrencySelect';
-import { validateProfileData } from 'entities/Profile/model/services/validateProfileData/validateProfileData';
-import { ValidateProfileErrors } from 'entities/Profile/model/types/profile';
+import { validateProfileData } from '../../services/validateProfileData/validateProfileData';
+import { ValidateProfileErrors } from '../../types/profile';
 
 const data = {
   lastname: 'Коломыцкий',

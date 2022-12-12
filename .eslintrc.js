@@ -18,7 +18,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'personal-fsd-ako-plugin'],
   rules: {
     'no-restricted-syntax': 'off',
     'react-hooks/rules-of-hooks': 'error',
@@ -29,11 +29,12 @@ module.exports = {
     'import/no-unresolved': 'off',
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
+    'personal-fsd-ako-plugin/path-checker': 'error',
     'i18next/no-literal-string': [
       'error',
       {
         markupOnly: true,
-        ignoreAttribute: ['data-testid', 'to'],
+        ignoreAttribute: ['data-testid', 'to', 'direction', 'gap', 'align', 'justify'],
       },
     ],
     'no-undef': 'off',

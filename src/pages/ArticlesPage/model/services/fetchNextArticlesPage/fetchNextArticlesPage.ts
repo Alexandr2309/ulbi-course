@@ -1,14 +1,14 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkApiConfig } from 'app/providers/storeProvider/config/stateSchema';
-import { Article } from 'entities/Article';
 import {
-  getArticlesPagesHasMore, getArticlesPagesIsLoading,
-  getArticlesPagesLimit,
+  getArticlesPagesHasMore,
+  getArticlesPagesIsLoading,
   getArticlesPagesNum,
-} from 'pages/ArticlesPage/model/selectors/getArticlesPages';
-import articlesPage from 'pages/ArticlesPage/ui/ArticlesPage/ArticlesPage';
-import { articlesPageActions } from 'pages/ArticlesPage/model/slices/articlesPageSlice';
-import { fetchArticlesPage } from 'pages/ArticlesPage/model/services/fetchArticlesPage/fetchArticlesPage';
+} from '../../selectors/getArticlesPages';
+import { articlesPageActions } from '../../slices/articlesPageSlice';
+import {
+  fetchArticlesPage,
+} from '../../services/fetchArticlesPage/fetchArticlesPage';
 
 export const fetchNextArticlesPage = createAsyncThunk<void,
   void,

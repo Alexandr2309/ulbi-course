@@ -4,7 +4,7 @@ import 'app/styles/index.scss';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/themeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
-import { ArticleBlockType, ArticleType } from 'entities/Article';
+import { ArticleBlockType, ArticleType } from '../../model/types/article';
 import { ArticleDetails } from './ArticleDetails';
 
 export default {

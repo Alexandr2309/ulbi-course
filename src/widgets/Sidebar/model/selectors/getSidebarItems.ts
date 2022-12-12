@@ -5,7 +5,7 @@ import MainIcon from 'shared/assets/icons/home.svg';
 import AboutIcon from 'shared/assets/icons/about-page.svg';
 import ProfileIcon from 'shared/assets/icons/profile.svg';
 import ArticlesIcon from 'shared/assets/icons/article-20-20.svg';
-import { SidebarItemType } from 'widgets/Sidebar/model/types/item';
+import { SidebarItemType } from '../types/item';
 
 export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
   const sidebarItemsList: SidebarItemType[] = [
