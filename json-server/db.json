@@ -548,14 +548,28 @@
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
-  "profile": {
-    "first": "Александр",
-    "lastname": "Коломыцкий",
-    "age": 18,
-    "currency": "EUR",
-    "country": "Armenia",
-    "city": "Khabarovsk",
-    "username": "admin",
-    "avatar": "https:/w7.pngwing.com/pngs/862/646/png-transparent-beard-hipster-male-man-avatars-xmas-giveaway-icon-thumbnail.png"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Александр",
+      "lastname": "Коломыцкий",
+      "age": 18,
+      "currency": "EUR",
+      "country": "Armenia",
+      "city": "Khabarovsk",
+      "username": "admin",
+      "avatar": "https:/w7.pngwing.com/pngs/862/646/png-transparent-beard-hipster-male-man-avatars-xmas-giveaway-icon-thumbnail.png"
+    },
+    {
+      "id": "2",
+      "first": "ulbi tv",
+      "lastname": "asf",
+      "age": 465,
+      "currency": "EUR",
+      "country": "Ukraine",
+      "city": "Moscow",
+      "username": "ulbi tv",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    }
+  ]
 }

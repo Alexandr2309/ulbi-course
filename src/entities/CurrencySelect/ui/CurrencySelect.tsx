@@ -1,10 +1,10 @@
 /**
  * Created by Саня on 01.11.2022
  */
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Select } from 'shared/ui/Select/Select';
-import { useTranslation } from 'react-i18next';
-import { Currency } from '../model/types/currency';
+import { classNames } from 'shared/lib/classNames/classNames'
+import { useTranslation } from 'react-i18next'
+import { Currency } from '../model/types/currency'
+import { ListBox } from 'shared/ui/ListBox/ListBox'
 
 interface ICurrencySelectProps {
   className?: string;
@@ -29,13 +29,15 @@ export const CurrencySelect = ({
   };
 
   return (
-    <Select
+    <ListBox
       className={classNames('', {}, [className])}
-      options={options}
+      items={options}
       value={value}
+      defaultValue={t('Укажите валюту')}
       label={t('Укажите валюту')}
       onChange={onChangeHandler}
       readonly={readonly}
+      direction="top"
     />
   );
 };

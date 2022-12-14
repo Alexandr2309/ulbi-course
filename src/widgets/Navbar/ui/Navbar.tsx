@@ -58,7 +58,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   }
 
   return (
-    <nav className={classNames(cls.Navbar, {}, [className])}>
+    <header className={classNames(cls.Navbar, {}, [className])}>
       <Text
         title={t('Logo App')}
         theme={TextTheme.INVERTED}
@@ -78,6 +78,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             isOpen={isAuthModal}
           />
         )}
-    </nav>
+    </header>
   );
 });

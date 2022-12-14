@@ -2,14 +2,15 @@
  * Created by Саня on 01.11.2022
  */
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Select } from 'shared/ui/Select/Select';
 import { useTranslation } from 'react-i18next';
+import { ListBox } from 'shared/ui/ListBox/ListBox';
+import { useCallback } from 'react';
 import { Country } from '../model/types/country';
 
-interface ICurrencySelectProps {
+interface ICountrySelectProps {
   className?: string;
-  value?: string;
-  onChange?: (value: Country) => void;
+  value?: Country;
+  onChange: (value: Country) => void;
   readonly?: boolean;
 }
 
@@ -23,21 +24,23 @@ const options = [
 
 export const CountrySelect = ({
   className, value, onChange, readonly,
-}: ICurrencySelectProps) => {
+}: ICountrySelectProps) => {
   const { t } = useTranslation();
 
-  const onChangeHandler = (value: string) => {
+  const onChangeHandler = useCallback((value: string) => {
     onChange?.(value as Country);
-  };
+  }, [onChange]);
 
   return (
-    <Select
+    <ListBox
       className={classNames('', {}, [className])}
-      options={options}
+      items={options}
       value={value}
+      defaultValue={t('Укажите страну')}
       label={t('Укажите страну')}
       onChange={onChangeHandler}
       readonly={readonly}
+      direction="top"
     />
   );
 };

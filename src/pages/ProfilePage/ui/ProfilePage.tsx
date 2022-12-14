@@ -9,11 +9,11 @@ import {
   fetchProfileData,
   getProfileError,
   getProfileForm,
-  getProfileIsLoading,
+  getProfileIsLoading, getProfileReadonly,
   profileActions,
   ProfileCard,
   profileReducer,
-} from 'entities/Profile';
+} from 'entities/Profile'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { Country } from 'entities/CountrySelect';
@@ -42,6 +42,7 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
   const formData = useSelector(getProfileForm);
   const error = useSelector(getProfileError);
   const isLoading = useSelector(getProfileIsLoading);
+  const readonly = useSelector(getProfileReadonly);
   const validateErrors = useSelector(getProfileValidateErrors);
   const { id } = useParams<{id: string}>();
 
@@ -106,6 +107,7 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
           data={formData}
           isLoading={isLoading}
           error={error}
+          readonly={readonly}
           onChangeFirstname={onChangeFirstname}
           onChangeLastname={onChangeLastname}
           onChangeAge={onChangeAge}
