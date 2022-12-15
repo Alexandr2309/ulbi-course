@@ -40,7 +40,7 @@ export const CountrySelect = ({
       label={t('Укажите страну')}
       onChange={onChangeHandler}
       readonly={readonly}
-      direction="top"
+      direction="top right"
     />
   );
 };
