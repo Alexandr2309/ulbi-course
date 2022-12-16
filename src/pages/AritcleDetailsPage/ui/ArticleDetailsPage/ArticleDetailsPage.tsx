@@ -16,6 +16,10 @@ import { AddCommentForm } from 'features/addCommentForm';
 import { Page } from 'widgets/Page/Page';
 import { ArticleList } from 'entities/Article/ui/ArticleList/ArticleList';
 import { VStack } from 'shared/ui/Stack';
+import { ArticleRecommendationsList } from 'features/articleRecommendationsList';
+import {
+  ArticleDetailsComments,
+} from 'pages/AritcleDetailsPage/ui/ArticleDetailsComments/ArticleDetailsComments';
 import { articlesDetailsPageReducer } from '../../model/slices';
 import {
   fetchRecommendationsByArticle,
@@ -47,22 +51,6 @@ const reducers: ReducersList = {
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const { t } = useTranslation('article-details');
   const { id } = useParams<{ id: string }>();
-  const dispatch = useAppDispatch();
-  const isLoading = useSelector(getArticleCommentsIsLoading);
-  // const error = useSelector(getArticleCommentsError);
-  const comments = useSelector(getArticleComments.selectAll);
-  const recommendations = useSelector(getArticleRecommendations.selectAll);
-  const isLoadingRecommendations = useSelector(getArticleRecommendationsIsLoading);
-  const errorRecommendations = useSelector(getArticleRecommendationsError);
-
-  useInitialEffect(() => {
-    dispatch(fetchCommentsByArticleId(id));
-    dispatch(fetchRecommendationsByArticle());
-  });
-
-  const onSendComment = useCallback((text: string) => {
-    dispatch(addCommentForArticle(text || ''));
-  }, [dispatch]);
 
   if (!id) {
     return (
@@ -78,18 +66,8 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         <VStack gap="16" align="start">
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          <Text title={t('Комментарии')} className={cls.commentsTitle} />
-          <ArticleList
-            articles={recommendations}
-            isLoading={isLoadingRecommendations}
-            className={cls.recommendations}
-            target="_blank"
-          />
-          <AddCommentForm onSendComment={onSendComment} />
-          <CommentsList
-            comments={comments}
-            isLoading={isLoading}
-          />
+          <ArticleRecommendationsList className={cls.recommendations} />
+          <ArticleDetailsComments id={id} />
         </VStack>
       </Page>
     </DynamicModuleLoader>

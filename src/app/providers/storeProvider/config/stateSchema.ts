@@ -14,11 +14,13 @@ import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { scrollSaveSchema } from 'features/ScrollSave';
 import { ArticlesDetailsPageSchema } from 'pages/AritcleDetailsPage/model/types';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
   scrollSave: scrollSaveSchema;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
   // async reducers
   loginForm?: LoginSchema;

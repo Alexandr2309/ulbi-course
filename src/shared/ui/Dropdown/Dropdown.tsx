@@ -22,8 +22,8 @@ interface DropdownProps {
 const mapDirectionClass: Record<DropdownDirection, string> = {
   'bottom left': cls.menuBottomLeft,
   'bottom right': cls.menuBottomRight,
-  'top right': cls.menuTopLeft,
-  'top left': cls.menuTopRight,
+  'top right': cls.menuTopRight,
+  'top left': cls.menuTopLeft,
 };
 
 export function Dropdown(props: DropdownProps) {
