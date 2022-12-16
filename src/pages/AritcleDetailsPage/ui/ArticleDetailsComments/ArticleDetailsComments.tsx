@@ -5,9 +5,10 @@ import { AddCommentForm } from 'features/addCommentForm';
 import { CommentsList } from 'entities/Comment';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { getArticleCommentsIsLoading } from 'pages/AritcleDetailsPage/model/selectors/comments';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useTranslation } from 'react-i18next';
+import { VStack } from 'shared/ui/Stack';
+import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import cls from './ArticleDetailsComments.module.scss';
 import {
   getArticleComments,
@@ -45,13 +46,13 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
   }, [dispatch]);
 
   return (
-    <div className={classNames('', {}, [className])}>
+    <VStack gap="8" max className={classNames('', {}, [className])}>
       <Text title={t('Комментарии')} className={cls.commentsTitle} />
       <AddCommentForm onSendComment={onSendComment} />
       <CommentsList
         comments={comments}
         isLoading={isLoading}
       />
-    </div>
+    </VStack>
   );
 });

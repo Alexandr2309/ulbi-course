@@ -1,9 +1,9 @@
 import { Country } from 'entities/CountrySelect';
 import { Currency } from 'entities/CurrencySelect';
+import { ValidateProfileErrors, ProfileSchema } from '../types/EditableProfileCardSchema';
 import {
   profileActions, profileReducer,
-} from '../slice/profileSlice';
-import { ProfileSchema, ValidateProfileErrors } from '../types/profile';
+} from './profileSlice';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 
 const data = {

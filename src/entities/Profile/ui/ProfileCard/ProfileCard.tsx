@@ -7,7 +7,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Currency } from 'entities/CurrencySelect/model/types/currency';
 import { CurrencySelect } from 'entities/CurrencySelect';
 import { Country, CountrySelect } from 'entities/CountrySelect';
-import { HStack, VStack } from 'shared/ui/Stack'
+import { HStack, VStack } from 'shared/ui/Stack';
 import { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
 
@@ -72,7 +72,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
   };
 
   return (
-    <VStack gap="8" align="start" className={classNames(cls.ProfileCard, mods, [className])}>
+    <VStack gap="8" align="start" max className={classNames(cls.ProfileCard, mods, [className])}>
       {data?.avatar && (
         <HStack justify="center" className={cls.avatarWrapper}>
           <Avatar
