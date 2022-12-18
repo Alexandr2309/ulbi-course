@@ -12,7 +12,7 @@ node_modules/
 .loki/report.json
 # Other files and folders
 .settings/
-
+/reports
 # Executables
 *.swf
 *.air

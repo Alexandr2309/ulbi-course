@@ -1,8 +1,8 @@
 import { Menu } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Fragment, ReactNode } from 'react';
-import { AppLink } from 'shared/ui/AppLink/AppLink';
-import { DropdownDirection } from 'shared/types/ui';
+import { AppLink } from '../AppLink/AppLink';
+import { DropdownDirection } from '../../types/ui';
 import cls from './Dropdown.module.scss';
 
 interface DropdownItem {

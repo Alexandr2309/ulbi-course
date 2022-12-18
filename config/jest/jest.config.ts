@@ -58,7 +58,15 @@ export default {
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
   },
   setupFilesAfterEnv: ['<rootDir>config/jest/setupTest.ts'],
-
+  reporters: [
+    'default',
+    ['jest-html-reporters', {
+      publicPath: '<rootDir>/reports/unit',
+      filename: 'report.html',
+      openReport: true,
+      inlineSource: true,
+    }],
+  ],
   // An array of regexp pattern strings used to skip coverage collection
 
   // Indicates which provider should be used to instrument code for coverage

@@ -2,8 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import 'app/styles/index.scss';
 import { RoutePath } from 'shared/config/routerConfig/routeConfig';
-import { StyleDecorator } from 'shared/config/storybook/StyleDecorator';
-import { Button } from 'shared/ui/Button/Button';
+import { Button } from '../Button/Button';
 import { Dropdown } from './Dropdown';
 
 export default {
