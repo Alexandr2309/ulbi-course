@@ -30,7 +30,7 @@ export const EditableProfileCardHeader = ({ className }: ProfilePageHeaderProps)
   }, [dispatch]);
 
   const onCancelEdit = useCallback(() => {
-    dispatch(profileActions.setReadonly(true));
+    dispatch(profileActions.cancelEdit());
   }, [dispatch]);
 
   const onSave = useCallback(() => {
@@ -47,6 +47,7 @@ export const EditableProfileCardHeader = ({ className }: ProfilePageHeaderProps)
               <Button
                 theme={ThemeButton.OUTLINED}
                 onClick={onEdit}
+                data-testid="EditableProfileCardHeader.Edit"
               >
                 {t('Редактировать')}
               </Button>
@@ -56,12 +57,14 @@ export const EditableProfileCardHeader = ({ className }: ProfilePageHeaderProps)
                   <Button
                     theme={ThemeButton.OUTLINED_RED}
                     onClick={onCancelEdit}
+                    data-testid="EditableProfileCardHeader.Cancel"
                   >
                     {t('Отменить')}
                   </Button>
                   <Button
                     theme={ThemeButton.OUTLINED}
                     onClick={onSave}
+                    data-testid="EditableProfileCardHeader.Save"
                   >
                     {t('Сохранить')}
                   </Button>
