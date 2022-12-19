@@ -17,7 +17,7 @@ export const CommentsList = memo((props: CommentsListProps) => {
   const { className, comments, isLoading } = props;
   const { t } = useTranslation();
   return (
-    <VStack gap="8" align="start" max className={classNames('', {}, [className])}>
+    <VStack gap="16" align="start" max className={classNames('', {}, [className])}>
       {comments?.length
         ? comments.map((comment) => (
           <CommentCard

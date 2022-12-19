@@ -530,6 +530,36 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "text": "коммент",
+      "id": "HyIFExe"
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "text": "fef",
+      "id": "T0rNyi0"
+    },
+    {
+      "userId": "1",
+      "articleId": "5",
+      "text": "gj",
+      "id": "AspVB_-"
+    },
+    {
+      "userId": "1",
+      "articleId": "5",
+      "text": "fe",
+      "id": "blv6FLL"
+    },
+    {
+      "userId": "1",
+      "articleId": "5",
+      "text": "текст",
+      "id": "IsZd8GQ"
     }
   ],
   "users": [
@@ -537,21 +567,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://i.pinimg.com/736x/f5/27/41/f52741fb62bf1d821948a49204406bdc.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     },
     {
       "id": "2",
       "username": "manager",
       "password": "123",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
