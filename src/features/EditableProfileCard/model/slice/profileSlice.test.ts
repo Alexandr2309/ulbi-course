@@ -39,7 +39,7 @@ describe('loginSlice', () => {
     };
     expect(profileReducer(
       state as ProfileSchema,
-      profileActions.cancelEdit(true),
+      profileActions.cancelEdit(),
     ))
       .toEqual({
         readonly: true,
