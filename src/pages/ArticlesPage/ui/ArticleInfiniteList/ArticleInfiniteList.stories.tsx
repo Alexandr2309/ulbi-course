@@ -4,10 +4,12 @@ import 'app/styles/index.scss';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/themeProvider';
 import { ArticleInfiniteList } from './ArticleInfiniteList';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
 
 export default {
-  title: 'shared/ArticleInfiniteList',
+  title: 'pages/ArticleInfiniteList',
   component: ArticleInfiniteList,
+  decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof ArticleInfiniteList>;
 
 const Template: ComponentStory<typeof ArticleInfiniteList> = (args) => <ArticleInfiniteList {...args} />;

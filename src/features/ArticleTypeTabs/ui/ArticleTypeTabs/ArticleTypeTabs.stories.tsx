@@ -7,7 +7,7 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import { ArticleTypeTabs } from './ArticleTypeTabs';
 
 export default {
-  title: 'shared/ArticleTypeTabs',
+  title: 'features/ArticleTypeTabs',
   component: ArticleTypeTabs,
   decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof ArticleTypeTabs>;

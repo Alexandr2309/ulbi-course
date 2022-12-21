@@ -35,7 +35,7 @@ export const ArticleList = (props: ArticleListProps) => {
     target,
   } = props;
   const { t } = useTranslation();
-  console.log(view);
+
   const renderArticle = (article: Article) => (
     <ArticleListItem
       article={article}

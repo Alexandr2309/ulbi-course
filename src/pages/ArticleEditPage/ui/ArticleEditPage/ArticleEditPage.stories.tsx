@@ -6,7 +6,7 @@ import { Theme } from 'app/providers/themeProvider';
 import ArticleEditPage from './ArticleEditPage';
 
 export default {
-  title: 'shared/ArticleEditPage',
+  title: 'pages/ArticleEditPage',
   component: ArticleEditPage,
 } as ComponentMeta<typeof ArticleEditPage>;
 

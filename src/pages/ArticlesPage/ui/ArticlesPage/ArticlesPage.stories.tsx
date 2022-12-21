@@ -7,7 +7,7 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import ArticlesPage from './ArticlesPage';
 
 export default {
-  title: 'shared/ArticlesPage',
+  title: 'pages/ArticlesPage',
   component: ArticlesPage,
   decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof ArticlesPage>;

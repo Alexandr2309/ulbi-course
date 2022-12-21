@@ -4,10 +4,12 @@ import 'app/styles/index.scss';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/themeProvider';
 import { ArticleDetailsComments } from './ArticleDetailsComments';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
 
 export default {
-  title: 'shared/ArticleDetailsComments',
+  title: 'pages/ArticleDetailsComments',
   component: ArticleDetailsComments,
+  decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof ArticleDetailsComments>;
 
 const Template: ComponentStory<typeof ArticleDetailsComments> = (args) => <ArticleDetailsComments {...args} />;
