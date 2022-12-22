@@ -23,11 +23,12 @@ import {
   getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
-import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { ArticleBlock } from '../../model/types/article';
 import {
   ArticleImageBlockComponent,
 } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { ArticleBlockType } from '../../model/consts/articleConsts';
 
 export interface ArticleDetailsProps {
   className?: string;

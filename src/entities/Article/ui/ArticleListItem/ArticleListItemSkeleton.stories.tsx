@@ -2,8 +2,8 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/themeProvider';
-import { ArticleView } from '../../model/types/article';
 import { ArticleListItemSkeleton } from './ArticleListItemSkeleton';
+import { ArticleView } from '../../model/consts/articleConsts';
 
 export default {
   title: 'entities/ArticleListItemSkeleton',

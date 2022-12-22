@@ -12,8 +12,9 @@ import { HTMLAttributeAnchorTarget } from 'react';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import cls from './ArticleListItem.module.scss';
 import {
-  Article, ArticleBlockType, ArticleTextBlock, ArticleView,
+  Article, ArticleTextBlock,
 } from '../../model/types/article';
+import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
 
 export interface ArticleListItemProps {
   className?: string;
