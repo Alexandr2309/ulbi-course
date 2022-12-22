@@ -13,13 +13,14 @@ export default function buildLoaders(options: BuildOptions): webpack.RuleSetRule
 
   const cssLoader = buildCssLoader(isDev);
 
-  const babelLoader = buildBabelLoader(options);
+  const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false });
+  const tsxCodeBabelLoader = buildBabelLoader({ ...options, isTsx: true });
 
-  const tsLoader = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/,
-  };
+  // const tsLoader = {
+  //   test: /\.tsx?$/,
+  //   use: 'ts-loader',
+  //   exclude: /node_modules/,
+  // };
 
   const fileLoader = {
     test: /\.(png|jpe?g|gif|woff|woff2)$/i,
@@ -30,5 +31,10 @@ export default function buildLoaders(options: BuildOptions): webpack.RuleSetRule
     ],
   };
 
-  return [fileLoader, svgLoader, babelLoader, tsLoader, cssLoader];
+  return [
+    fileLoader,
+    svgLoader,
+    codeBabelLoader,
+    tsxCodeBabelLoader,
+    cssLoader];
 }
