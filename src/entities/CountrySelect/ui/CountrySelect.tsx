@@ -3,7 +3,7 @@
  */
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { ListBox } from 'shared/ui/ListBox/ListBox';
+import { ListBox } from 'shared/ui/Popups';
 import { useCallback } from 'react';
 import { Country } from '../model/types/country';
 
