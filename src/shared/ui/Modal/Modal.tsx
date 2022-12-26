@@ -4,6 +4,7 @@ import React, {
   useCallback, useEffect, useRef, useState,
 } from 'react';
 import { useTheme } from 'app/providers/themeProvider';
+import { Overlay } from 'shared/ui/Overlay/Overlay';
 import Portal from '../Portal/Portal';
 import cls from './Modal.module.scss';
 
@@ -24,10 +25,6 @@ export const Modal = ({
   const [isMounted, setIsMounted] = useState(false);
   const timeRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
   const { theme } = useTheme();
-
-  const onContentClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-  };
 
   const closeHandler = useCallback(() => {
     if (onClose) {
@@ -74,10 +71,9 @@ export const Modal = ({
   return (
     <Portal>
       <div className={classNames(cls.Modal, mods, [className])}>
-        <div className={cls.overlay} onClick={closeHandler}>
-          <div className={cls.content} onClick={onContentClick}>
-            {children}
-          </div>
+        <Overlay onClose={closeHandler} />
+        <div className={cls.content}>
+          {children}
         </div>
       </div>
     </Portal>
