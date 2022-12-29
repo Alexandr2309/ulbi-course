@@ -1,8 +1,8 @@
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { userActions } from 'entities/User';
-import { articleDetailsActions } from 'entities/Article/model/slice/articleDetailsSlice';
-import { Article } from 'entities/Article';
-import { StateSchema } from 'app/providers/storeProvider';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { userActions } from '@/entities/User';
+import { articleDetailsActions } from '@/entities/Article/model/slice/articleDetailsSlice';
+import { Article } from '@/entities/Article';
+import { StateSchema } from '@/app/providers/storeProvider';
 import { addCommentForArticle } from './addCommentForArticle';
 
 const article = {

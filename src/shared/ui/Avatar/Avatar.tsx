@@ -1,8 +1,8 @@
 /**
  * Created by Саня on 01.11.2022
  */
-import { classNames } from 'shared/lib/classNames/classNames';
 import { CSSProperties, useMemo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Avatar.module.scss';
 
 interface IAvatarProps {

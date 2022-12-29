@@ -1,9 +1,9 @@
 import { memo } from 'react';
-import { ArticleList } from 'entities/Article/ui/ArticleList/ArticleList';
 import { useSelector } from 'react-redux';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useSearchParams } from 'react-router-dom';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { ArticleList } from '@/entities/Article/ui/ArticleList/ArticleList';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getArticles } from '../../model/slices/articlesPageSlice';
 import {
   getArticlesPagesError,

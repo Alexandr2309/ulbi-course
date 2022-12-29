@@ -1,9 +1,9 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import 'app/styles/index.scss';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
-import { Theme } from 'app/providers/themeProvider';
-import avatar from 'shared/assets/tests/test_ava.png';
+import '@/app/styles/index.scss';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { Theme } from '@/app/providers/themeProvider';
+import avatar from '@/shared/assets/tests/test_ava.png';
 import { CommentsList } from './CommentsList';
 
 export default {

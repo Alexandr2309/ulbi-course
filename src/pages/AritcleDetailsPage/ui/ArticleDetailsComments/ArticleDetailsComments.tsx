@@ -1,13 +1,13 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback } from 'react';
-import { Text } from 'shared/ui/Text/Text';
-import { AddCommentForm } from 'features/addCommentForm';
-import { CommentsList } from 'entities/Comment';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useTranslation } from 'react-i18next';
-import { VStack } from 'shared/ui/Stack';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text } from '@/shared/ui/Text/Text';
+import { AddCommentForm } from '@/features/addCommentForm';
+import { CommentsList } from '@/entities/Comment';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { VStack } from '@/shared/ui/Stack';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import cls from './ArticleDetailsComments.module.scss';
 import {

@@ -1,11 +1,11 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import React, { useState } from 'react';
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
-import { LangSwitcher } from 'widgets/LangSwitcher';
 import { useTranslation } from 'react-i18next';
-import { Button, SizeButton, ThemeButton } from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
-import { VStack } from 'shared/ui/Stack';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
+import { LangSwitcher } from '@/widgets/LangSwitcher';
+import { Button, SizeButton, ThemeButton } from '@/shared/ui/Button/Button';
+import { VStack } from '@/shared/ui/Stack';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import cls from './Sidebar.module.scss';

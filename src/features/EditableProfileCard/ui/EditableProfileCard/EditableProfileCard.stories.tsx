@@ -1,10 +1,10 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { EditableProfileCard } from './EditableProfileCard';
-import { Profile } from 'entities/Profile'
-import { Country } from 'entities/CountrySelect'
-import { Currency } from 'entities/CurrencySelect'
+import { Profile } from '@/entities/Profile';
+import { Country } from '@/entities/CountrySelect';
+import { Currency } from '@/entities/CurrencySelect';
 
 const profile: Profile = {
   id: '1',
@@ -15,7 +15,7 @@ const profile: Profile = {
   first: 'Александр',
   lastname: 'Коломыцкий',
   username: 'saha230904',
-}
+};
 
 export default {
   title: 'features/EditableProfileCard',

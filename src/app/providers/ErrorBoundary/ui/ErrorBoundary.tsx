@@ -2,7 +2,7 @@
  * Created by Саня on 26.09.2022
  */
 import React, { ErrorInfo } from 'react';
-import { PageError } from 'widgets/PageError';
+import { PageError } from '@/widgets/PageError';
 
 interface IErrorBoundaryProps {
   children: React.ReactNode;
