@@ -8,7 +8,6 @@ const MainPage = memo(() => {
   return (
     <Page>
       {t('Главная страница')}
-      <RatingCard title="Как вам статья?" hasFeedback feedbackTitle="Оставьте отзыв о статье" />
     </Page>
   );
 });

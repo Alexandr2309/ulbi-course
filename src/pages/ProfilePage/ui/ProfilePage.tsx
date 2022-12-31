@@ -1,8 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
+import { useParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Page } from '@/widgets/Page/Page';
 import { EditableProfileCard } from '@/features/EditableProfileCard';
+import { ProfileRating } from '@/features/profileRating';
+import { VStack } from '@/shared/ui/Stack';
 
 export interface ProfilePageProps {
   className?: string
@@ -10,10 +13,16 @@ export interface ProfilePageProps {
 
 const ProfilePage = memo(({ className }: ProfilePageProps) => {
   const { t } = useTranslation('profile');
+  const { id } = useParams<{ id: string }>();
+
+  if (!id) return null;
 
   return (
     <Page className={classNames('', {}, [className])}>
-      <EditableProfileCard />
+      <VStack max gap="32">
+        <EditableProfileCard />
+        <ProfileRating profileId={id} />
+      </VStack>
     </Page>
   );
 });
