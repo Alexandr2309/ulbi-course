@@ -4,10 +4,22 @@ import '@/app/styles/index.scss';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/app/providers/themeProvider';
 import { AvatarDropdown } from './AvatarDropdown';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
+import { UserRole } from '@/entities/User';
 
 export default {
   title: 'features/AvatarDropdown',
   component: AvatarDropdown,
+  decorators: [StoreDecorator({
+    user: {
+      dataAuth: {
+        id: '1',
+        username: 'Петя',
+        avatar: 'https://ulbitv.ru/public/mimetypes/zip-icon-48x48.png',
+        roles: [UserRole.ADMIN],
+      },
+    },
+  })],
 } as ComponentMeta<typeof AvatarDropdown>;
 
 const Template: ComponentStory<typeof AvatarDropdown> = (args) => <AvatarDropdown {...args} />;

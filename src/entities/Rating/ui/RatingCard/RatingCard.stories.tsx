@@ -8,6 +8,12 @@ import { RatingCard } from './RatingCard';
 export default {
   title: 'entities/RatingCard',
   component: RatingCard,
+  args: {
+    title: 'Отличный отзыв',
+    rate: 4,
+    feedbackTitle: 'Оставьте отзыв пожалуйста',
+    hasFeedback: true,
+  },
 } as ComponentMeta<typeof RatingCard>;
 
 const Template: ComponentStory<typeof RatingCard> = (args) => <RatingCard {...args} />;
