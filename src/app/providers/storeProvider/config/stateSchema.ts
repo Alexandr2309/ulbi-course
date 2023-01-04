@@ -15,7 +15,7 @@ import { ArticleDetailsSchema } from '@/entities/Article';
 import { AddCommentFormSchema } from '@/features/addCommentForm';
 import { ArticlesPageSchema } from '@/pages/ArticlesPage';
 import { scrollSaveSchema } from '@/features/ScrollSave';
-import { ArticlesDetailsPageSchema } from '@/pages/AritcleDetailsPage/model/types';
+import { ArticlesDetailsPageSchema } from '@/pages/AritcleDetailsPage';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { ProfileSchema } from '@/features/EditableProfileCard';
 

@@ -6,7 +6,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { Country } from '@/entities/CountrySelect';
 import { Currency } from '@/entities/CurrencySelect';
 import avatarTest from '@/shared/assets/tests/test_ava.png';
-import { ValidateProfileErrors } from '@/features/EditableProfileCard/model/types/EditableProfileCardSchema';
+import { ValidateProfileErrors } from '@/features/EditableProfileCard';
 import ProfilePage from './ProfilePage';
 
 export default {

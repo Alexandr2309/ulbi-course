@@ -3,11 +3,14 @@ import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { TabItem, Tabs } from '@/shared/ui/Tabs/Tabs';
+// eslint-disable-next-line personal-fsd-ako-plugin/public-api-imports
 import { getArticlesPagesType } from '@/pages/ArticlesPage/model/selectors/getArticlesPages';
+// eslint-disable-next-line personal-fsd-ako-plugin/public-api-imports
 import {
   fetchArticlesPage,
 } from '@/pages/ArticlesPage/model/services/fetchArticlesPage/fetchArticlesPage';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+// eslint-disable-next-line personal-fsd-ako-plugin/public-api-imports
 import { articlesPageActions } from '@/pages/ArticlesPage/model/slices/articlesPageSlice';
 import { ArticleType } from '@/entities/Article';
 import cls from './ArticleTypeTabs.module.scss';

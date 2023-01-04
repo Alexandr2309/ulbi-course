@@ -11,3 +11,5 @@ export {
   getArticleDetailsError,
   getArticleDetailsIsLoading,
 } from './model/selectors/articleDetails';
+export { ArticleList } from './ui/ArticleList/ArticleList';
+export { articleDetailsActions, articleDetailsReducer } from './model/slice/articleDetailsSlice';

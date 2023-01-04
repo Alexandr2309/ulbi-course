@@ -2,7 +2,7 @@ import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/storeProvider';
 import { loginReducer } from '@/features/AuthByUsername';
 import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice';
+import { articleDetailsReducer } from '@/entities/Article';
 import { profileReducer } from '@/features/EditableProfileCard';
 
 const defaultAsyncReducers = {
