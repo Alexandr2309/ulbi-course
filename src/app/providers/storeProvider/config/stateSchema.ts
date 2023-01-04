@@ -1,5 +1,9 @@
 import {
-  AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
+  AnyAction,
+  CombinedState,
+  EnhancedStore,
+  Reducer,
+  ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { To } from 'history';
 import { NavigateOptions } from 'react-router';
@@ -8,7 +12,6 @@ import { LoginSchema } from '@/features/AuthByUsername';
 import { UserSchema } from '@/entities/User';
 import { CounterSchema } from '@/entities/Counter';
 import { ArticleDetailsSchema } from '@/entities/Article';
-import { ArticleDetailsCommentsSchema } from '@/pages/AritcleDetailsPage';
 import { AddCommentFormSchema } from '@/features/addCommentForm';
 import { ArticlesPageSchema } from '@/pages/ArticlesPage';
 import { scrollSaveSchema } from '@/features/ScrollSave';
