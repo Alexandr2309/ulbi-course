@@ -30,7 +30,10 @@ module.exports = {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
     'personal-fsd-ako-plugin/path-checker': ['error', { alias: '@' }],
-    'personal-fsd-ako-plugin/public-api-imports': ['error', { alias: '@' }],
+    'personal-fsd-ako-plugin/public-api-imports': ['error', {
+      alias: '@',
+      testFilesPatterns: ['**/*.test.*', '**/StoreDecorator.tsx', '**/*.story.*'],
+    }],
     'i18next/no-literal-string': [
       'error',
       {
