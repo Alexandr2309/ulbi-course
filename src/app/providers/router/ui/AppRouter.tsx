@@ -1,8 +1,9 @@
 import React, { Suspense, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { AppRouteProps, routeConfig } from '@/shared/config/routerConfig/routeConfig';
 import { PageLoader } from '@/widgets/PageLoader';
 import { RequireAuth } from '@/app/providers/router/ui/RequireAuth';
+import { routeConfig } from '@/app/providers/router/config/routerConfig';
+import { AppRouteProps } from '@/shared/types/route';
 
 export const AppRouter = () => {
   const renderWithRequired = useCallback((route: AppRouteProps) => {
