@@ -5,7 +5,7 @@ import {
   ReducerManager,
   StateSchema,
   StateSchemaKey,
-} from '@/app/providers/storeProvider/config/stateSchema';
+} from '@/app/providers/storeProvider';
 
 export function createReducerManager(
   initialReducers: ReducersMapObject<StateSchema>,

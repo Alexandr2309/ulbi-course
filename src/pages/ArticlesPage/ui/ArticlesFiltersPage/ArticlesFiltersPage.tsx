@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleViewSelector } from '@/features/ArticleViewSelector';
-import { ArticlesSortField, ArticleView } from '@/entities/Article';
+import { ArticlesSortField, ArticleType, ArticleView } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ArticlesSortSelector } from '@/features/ArticlesSortSelector';
 import { SortOrder } from '@/shared/types';
@@ -17,7 +17,7 @@ import {
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
 import cls from './ArticlesFiltersPage.module.scss';
 import {
-  getArticlesPagesOrder, getArticlesPagesSearch, getArticlesPagesSort,
+  getArticlesPagesOrder, getArticlesPagesSearch, getArticlesPagesSort, getArticlesPagesType,
   getArticlesPagesView,
 } from '../../model/selectors/getArticlesPages';
 
@@ -33,6 +33,7 @@ export const ArticlesFiltersPage = memo((props: ArticlesFiltersPageProps) => {
   const order = useSelector(getArticlesPagesOrder);
   const sort = useSelector(getArticlesPagesSort);
   const search = useSelector(getArticlesPagesSearch);
+  const type = useSelector(getArticlesPagesType);
 
   const onChangeView = useCallback((view: ArticleView) => {
     dispatch(articlesPageActions.setView(view));
@@ -62,6 +63,12 @@ export const ArticlesFiltersPage = memo((props: ArticlesFiltersPageProps) => {
     fetchData();
   }, [dispatch, fetchData]);
 
+  const onChangeType = useCallback((value: ArticleType) => {
+    dispatch(articlesPageActions.setType(value));
+    dispatch(articlesPageActions.setPage(1));
+    fetchData();
+  }, [dispatch, fetchData]);
+
   return (
     <div className={classNames(cls.ArticlesFiltersPage, {}, [className])}>
       <div className={cls.sortWrapper}>
@@ -86,6 +93,8 @@ export const ArticlesFiltersPage = memo((props: ArticlesFiltersPageProps) => {
       </Card>
       <ArticleTypeTabs
         className={cls.tabs}
+        value={type}
+        changeType={onChangeType}
       />
     </div>
   );

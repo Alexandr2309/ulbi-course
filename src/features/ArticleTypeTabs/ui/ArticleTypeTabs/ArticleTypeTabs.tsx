@@ -1,35 +1,23 @@
 import { memo, useCallback, useMemo } from 'react';
-import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { TabItem, Tabs } from '@/shared/ui/Tabs/Tabs';
-// eslint-disable-next-line personal-fsd-ako-plugin/public-api-imports
-import { getArticlesPagesType } from '@/pages/ArticlesPage/model/selectors/getArticlesPages';
-// eslint-disable-next-line personal-fsd-ako-plugin/public-api-imports
-import {
-  fetchArticlesPage,
-} from '@/pages/ArticlesPage/model/services/fetchArticlesPage/fetchArticlesPage';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-// eslint-disable-next-line personal-fsd-ako-plugin/public-api-imports
-import { articlesPageActions } from '@/pages/ArticlesPage/model/slices/articlesPageSlice';
 import { ArticleType } from '@/entities/Article';
 import cls from './ArticleTypeTabs.module.scss';
 
 export interface ArticleTypeTabsProps {
   className?: string;
+  value: ArticleType;
+  changeType: (type: ArticleType) => void
 }
 
 export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
-  const { className } = props;
-  const type = useSelector(getArticlesPagesType);
-  const dispatch = useAppDispatch();
+  const { className, changeType, value } = props;
   const { t } = useTranslation();
 
   const onChangeType = useCallback((tab: TabItem) => {
-    dispatch(articlesPageActions.setType(tab.value as ArticleType));
-    dispatch(articlesPageActions.setPage(1));
-    dispatch(fetchArticlesPage({ replace: true }));
-  }, [dispatch]);
+    changeType(tab.value as ArticleType);
+  }, [changeType]);
 
   const typeTabs = useMemo<TabItem[]>(() => [
     {
@@ -53,7 +41,7 @@ export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
   return (
     <Tabs
       tabs={typeTabs}
-      value={type}
+      value={value}
       onTabClick={onChangeType}
       className={classNames(cls.ArticleTypeTabs, {}, [className])}
     />

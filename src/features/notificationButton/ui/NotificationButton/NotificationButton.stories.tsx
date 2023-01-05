@@ -1,9 +1,8 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import '@/app/styles/index.scss';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/app/providers/themeProvider';
 import { NotificationButton } from './NotificationButton';
+import { Theme } from '@/shared/const/theme';
 
 export default {
   title: 'features/NotificationButton',

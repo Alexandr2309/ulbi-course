@@ -1,22 +1,12 @@
 import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import '@/app/styles/index.scss';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/app/providers/themeProvider';
-import { Country } from '@/entities/CountrySelect';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ListBox } from './ListBox';
 
 export default {
   title: 'shared/ListBox',
   component: ListBox,
-  args: {
-    items: [
-      { value: Country.Armenia, content: 'Armenia' },
-      { value: Country.Belarus, content: 'Belarus' },
-      { value: Country.Kazahstan, content: 'Kazahstan' },
-      { value: Country.Russia, content: 'Russia' },
-      { value: Country.Ukraine, content: 'Ukraine' },
-    ],
+  argTypes: {
+    backgroundColor: { control: 'color' },
   },
   decorators: [
     (Story) => <div style={{ padding: 100 }}><Story /></div>,

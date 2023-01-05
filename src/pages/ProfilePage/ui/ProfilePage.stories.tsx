@@ -1,13 +1,13 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/app/providers/themeProvider';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { Country } from '@/entities/CountrySelect';
 import { Currency } from '@/entities/CurrencySelect';
 import avatarTest from '@/shared/assets/tests/test_ava.png';
 import { ValidateProfileErrors } from '@/features/EditableProfileCard';
 import ProfilePage from './ProfilePage';
+import { Theme } from '@/shared/const/theme';
 
 export default {
   title: 'pages/ProfilePage',

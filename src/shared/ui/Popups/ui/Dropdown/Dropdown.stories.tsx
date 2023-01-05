@@ -1,6 +1,5 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import '@/app/styles/index.scss';
 import { Button } from '../../../Button/Button';
 import { Dropdown } from './Dropdown';
 import { RoutePath } from '@/shared/const/route';

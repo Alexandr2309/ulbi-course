@@ -1,28 +1,22 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import '@/app/styles/index.scss';
 import { action } from '@storybook/addon-actions';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/app/providers/themeProvider';
-import { ArticleType } from '@/entities/Article';
 import { Tabs } from './Tabs';
+import { Theme } from '@/shared/const/theme';
 
 const tabs = [
   {
-    value: ArticleType.ALL,
-    content: 'Все',
+    value: 'tab 1',
+    content: 'tab 1',
   },
   {
-    value: ArticleType.IT,
-    content: 'Айти',
+    value: 'tab 2',
+    content: 'tab 2',
   },
   {
-    value: ArticleType.ECONOMICS,
-    content: 'Экономика',
-  },
-  {
-    value: ArticleType.SCIENCE,
-    content: 'Наука',
+    value: 'tab 3',
+    content: 'tab 3',
   },
 ];
 
@@ -31,7 +25,7 @@ export default {
   component: Tabs,
   args: {
     tabs,
-    value: ArticleType.SCIENCE,
+    value: 'tab 2',
     onTabClick: action('tab'),
   },
 } as ComponentMeta<typeof Tabs>;

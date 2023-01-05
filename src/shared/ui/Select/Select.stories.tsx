@@ -1,6 +1,5 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Currency } from '@/entities/CurrencySelect';
 import { Select } from './Select';
 
 export default {
@@ -15,9 +14,8 @@ const Template: ComponentStory<typeof Select> = (args) => (
 export const Primary = Template.bind({});
 Primary.args = {
   options: [
-    { value: Currency.RUB, content: 'RUB' },
-    { value: Currency.USD, content: 'USD' },
-    { value: Currency.EUR, content: 'EUR' },
+    { value: '123', content: 'Первый пункт' },
+    { value: '1234', content: 'Второй пункт' },
   ],
   label: 'Укажите валюту',
 };

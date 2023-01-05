@@ -1,12 +1,12 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/app/providers/themeProvider';
 import { Country } from '@/entities/CountrySelect';
 import { Currency } from '@/entities/CurrencySelect';
 import avatarTest from '@/shared/assets/tests/test_ava.png';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { ProfileCard } from './ProfileCard';
+import { Theme } from '@/shared/const/theme';
 
 export default {
   title: 'entities/ProfileCard',

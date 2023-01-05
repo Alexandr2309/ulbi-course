@@ -1,15 +1,18 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import '@/app/styles/index.scss';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/app/providers/themeProvider';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { ArticleTypeTabs } from './ArticleTypeTabs';
+import { Theme } from '@/shared/const/theme';
 
 export default {
   title: 'features/ArticleTypeTabs',
   component: ArticleTypeTabs,
   decorators: [StoreDecorator({})],
+  args: {
+    value: '',
+    changeType: () => '',
+  },
 } as ComponentMeta<typeof ArticleTypeTabs>;
 
 const Template: ComponentStory<typeof ArticleTypeTabs> = (args) => <ArticleTypeTabs {...args} />;
