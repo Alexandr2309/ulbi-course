@@ -3,14 +3,14 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
-import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { Text, TextTheme } from '@/shared/ui/Text';
 import {
   DynamicModuleLoader,
   ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Icon } from '@/shared/ui/Icon';
 import eyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import calendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
 import { HStack, VStack } from '@/shared/ui/Stack';

@@ -2,7 +2,7 @@
  * Created by Саня on 26.09.2022
  */
 import { useTranslation } from 'react-i18next';
-import { Button } from '@/shared/ui/Button/Button';
+import { Button } from '@/shared/ui/Button';
 import cls from './PageError.module.scss';
 
 interface IPageErrorProps {

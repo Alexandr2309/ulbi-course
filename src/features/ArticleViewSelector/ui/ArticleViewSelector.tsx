@@ -3,8 +3,8 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleView } from '@/entities/Article';
 import TiledIcon from '@/shared/assets/icons/tiled-24-24.svg';
 import ListIcon from '@/shared/assets/icons/list-24-24.svg';
-import { Icon } from '@/shared/ui/Icon/Icon';
-import { ThemeButton, Button } from '@/shared/ui/Button/Button';
+import { Icon } from '@/shared/ui/Icon';
+import { ThemeButton, Button } from '@/shared/ui/Button';
 import cls from './ArticleViewSelector.module.scss';
 
 export interface ArticleViewSelectorProps {

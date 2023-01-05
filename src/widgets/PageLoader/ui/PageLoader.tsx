@@ -1,7 +1,7 @@
 /**
  * Created by Саня on 29.09.2022
  */
-import { Loader } from '@/shared/ui/Loader/Loader';
+import { Loader } from '@/shared/ui/Loader';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './PageLoader.module.scss';
 
