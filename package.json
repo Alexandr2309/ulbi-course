@@ -10,7 +10,7 @@
     "start:dev:vite": "concurrently \"npm run start:vite\" \"npm run start:dev:server\"",
     "start:dev:server": "node ./json-server/index.js",
     "build:dev": "webpack --env mode=development",
-    "build:prod": "webpack --env mode=production api=https://production-project-server-32iku3m2c-alexandr2309.vercel.app/",
+    "build:prod": "webpack --env mode=production api=https://production-project-server-4hpo56nby-alexandr2309.vercel.app/",
     "lint:ts": "eslint \"**/*.{ts,tsx}\" --quiet",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
