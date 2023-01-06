@@ -2,5 +2,5 @@
   from = "/*"
   to = "/index.html"
   status = 200
-[build]
+[build.environment]
 NPM_FLAGS = "--force"
