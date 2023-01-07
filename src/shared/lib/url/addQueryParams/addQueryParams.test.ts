@@ -1,4 +1,3 @@
-import { isUndefined } from 'util';
 import { getQueryParams } from './addQueryParams';
 
 describe('addQueryParams', () => {
