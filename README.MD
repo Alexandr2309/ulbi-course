@@ -6,15 +6,15 @@
 
 # О приложении
 
-Методологий: Feature-Sliced design
-Фреймворк: React
-Языки программирования: TypeScript
-Управление состоянием: : Redux Toolkit 
-Библиотеки: React-spring, use-gesture, HeadlessUI, SCSS(модули), i18n(интернализация), react-device-detect
-Взаимод. с backend: Redux Toolkit Query(RTK Query), axios;
-Тесты: Jest, React-testing library, Storybook(витрина компонентов/ используется в Loki для тестов), Loki(скриншотное тестирование). Storybook невероятно удобный и нужный инструмент 
-Линтеры: ESLint, Stylelint
-Инструменты: webpack/vite, husky, CI/CD, ts-morph, Git, Netlify, Babel, Prettier, JSON-server
+* Методологий: Feature-Sliced design
+* Фреймворк: React
+* Языки программирования: TypeScript
+* Управление состоянием: : Redux Toolkit 
+* Библиотеки: React-spring, use-gesture, HeadlessUI, SCSS(модули), i18n(интернализация), react-device-detect
+* Взаимод. с backend: Redux Toolkit Query(RTK Query), axios;
+* Тесты: Jest, React-testing library, Storybook(витрина компонентов/ используется в Loki для тестов), Loki(скриншотное тестирование). Storybook невероятно удобный и нужный инструмент 
+* Линтеры: ESLint, Stylelint
+* Инструменты: webpack/vite, husky, CI/CD, ts-morph, Git, Netlify, Babel, Prettier, JSON-server
 
 Проект собран с использованием персональной конфигурации webpack.
 
