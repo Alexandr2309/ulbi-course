@@ -26,9 +26,15 @@
 
 # About application
 
-The site is developed according to the methodology of the Feature-sliced design.
-Stack: React, React-Router-Dom, Redux Toolkit, TypeScript, scss modules, i18n
-
+* Methodologies: Functionally sliced design
+* Framework: React
+* Programming languages: Typewritten text
+* State Manager: : Redux Toolkit
+* Libraries: React-spring, using gestures, HeadlessUI, CSS(modules), i18n(internalization), react-device detection. 
+* From the server side: Redux Toolkit Query(RTK Query), axios;
+* Tests: Jest, React testing library, Storybook (showcase of components/ used in Loki for tests), Loki (screenshot testing). A collection of short stories is an incredibly convenient and necessary tool
+* Linters: ESLint, Styleline
+* Tools: webpack/ise, husky, CI/CD, ts-morph, Get, Netlife, Babel, Prettier, JSON server
 It is assembled using a personal webpack configuration
 
 Linters: ESLint, Styleline. Babel and prettier is used.
