@@ -2,6 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { USER_LOCALSTORAGE_ITEM } from '@/shared/const/localStorage';
 
 // Define a service using a base URL and expected endpoints
+
 export const rtkApi = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({

@@ -16,6 +16,11 @@ interface DynamicModuleLoaderProps {
   children: ReactNode;
 }
 
+/**
+ *
+ * @param {DynamicModuleLoaderProps} props
+ * @constructor
+ */
 export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
   const {
     children,
