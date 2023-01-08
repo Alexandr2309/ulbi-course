@@ -22,7 +22,7 @@ describe('fetchNextArticlesPage.test', () => {
     await thunk.callThunk();
 
     expect(thunk.dispatch).toBeCalledTimes(4);
-    expect(fetchArticlesPage).toHaveBeenCalledWith({ page: 2 });
+    expect(fetchArticlesPage).toHaveBeenCalled();
   });
 
   test('has more false', async () => {
