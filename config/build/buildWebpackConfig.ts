@@ -24,7 +24,7 @@ export default function buildWebpackConfig(options: BuildOptions): webpack.Confi
       rules: buildLoaders(options),
     },
     resolve: buildResolvers(options),
-    devtool: isDev ? 'inline-source-map' : undefined,
+    devtool: isDev ? 'eval-cheap-module-source-map' : undefined,
     devServer: isDev ? buildDevServer(options) : undefined,
   };
 }

@@ -16,12 +16,6 @@ export default function buildLoaders(options: BuildOptions): webpack.RuleSetRule
   const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false });
   const tsxCodeBabelLoader = buildBabelLoader({ ...options, isTsx: true });
 
-  // const tsLoader = {
-  //   test: /\.tsx?$/,
-  //   use: 'ts-loader',
-  //   exclude: /node_modules/,
-  // };
-
   const fileLoader = {
     test: /\.(png|jpe?g|gif|woff|woff2)$/i,
     use: [
