@@ -2,7 +2,6 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Button } from '../../../Button/Button';
 import { Dropdown } from './Dropdown';
-import { RoutePath } from '@/shared/const/route';
 
 export default {
   title: 'shared/Dropdown',
@@ -11,7 +10,7 @@ export default {
     items: [
       {
         content: 'Профиль',
-        href: RoutePath.profile,
+        href: 'sss',
       },
       {
         content: 'Выйти',

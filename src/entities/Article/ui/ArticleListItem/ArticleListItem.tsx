@@ -14,7 +14,7 @@ import {
   Article, ArticleTextBlock,
 } from '../../model/types/article';
 import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
-import { RoutePath } from '@/shared/const/route';
+import { getRouteArticleDetails } from '@/shared/const/route';
 
 export interface ArticleListItemProps {
   className?: string;
@@ -48,7 +48,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
     return (
       <AppLink
         target={target}
-        to={RoutePath.article_details + article.id}
+        to={getRouteArticleDetails(article.id)}
         className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
       >
         <Card>
@@ -77,7 +77,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
   return (
     <AppLink
       target={target}
-      to={RoutePath.article_details + article.id}
+      to={getRouteArticleDetails(article.id)}
       className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
     >
       <Card>

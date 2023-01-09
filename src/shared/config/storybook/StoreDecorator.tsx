@@ -8,7 +8,7 @@ import { addCommentFormReducer } from '@/features/addCommentForm/testing';
 import { articlesPageReducer } from '@/pages/ArticlesPage/testing';
 import { articlesDetailsPageReducer } from '@/pages/AritcleDetailsPage/testing';
 
-const defaultAsyncReducers = {
+const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
   articleDetails: articleDetailsReducer,
