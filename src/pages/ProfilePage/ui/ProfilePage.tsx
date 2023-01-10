@@ -18,7 +18,7 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
   if (!id && __PROJECT__ !== 'storybook') return null;
 
   return (
-    <Page className={classNames('', {}, [className])}>
+    <Page data-testid="ProfilePage" className={classNames('', {}, [className])}>
       <VStack max gap="32">
         <EditableProfileCard />
         <ProfileRating profileId={id!} />

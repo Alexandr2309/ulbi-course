@@ -15,7 +15,7 @@ export const Skeleton = ({
   const styles: CSSProperties = {
     width,
     height,
-    border,
+    borderRadius: border,
   };
 
   return (
