@@ -15,7 +15,7 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
   const { t } = useTranslation('profile');
   const { id } = useParams<{ id: string }>();
 
-  if (!id && __PROJECT__ !== 'storybook') return null;
+  // if (!id && __PROJECT__ !== 'storybook') return null;
 
   return (
     <Page data-testid="ProfilePage" className={classNames('', {}, [className])}>

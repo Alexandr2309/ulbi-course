@@ -1,24 +1,33 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import withMock from 'storybook-addon-mock';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { ProfileRating } from './ProfileRating';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
-import { Theme } from '@/shared/const/theme';
 
 export default {
   title: 'features/ProfileRating',
   component: ProfileRating,
-  decorators: [StoreDecorator({}), withMock],
+  decorators: [StoreDecorator({
+    user: {
+      dataAuth: {
+        id: '2',
+        avatar: '',
+        username: 'fdsf',
+        roles: [],
+      },
+    },
+  })],
+  args: {
+    profileId: '1',
+  },
   parameters: {
     mockData: [
       {
         url: `${__API__}/profile-ratings?profileId=1&userId=2`,
         method: 'GET',
         status: 200,
-        response: {
+        response: [{
           rate: 5,
-        },
+        }],
       },
     ],
   },
@@ -28,11 +37,3 @@ const Template: ComponentStory<typeof ProfileRating> = (args) => <ProfileRating 
 
 export const Normal = Template.bind({});
 Normal.args = {};
-
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const Pink = Template.bind({});
-Pink.args = {};
-Pink.decorators = [ThemeDecorator(Theme.PINK)];
