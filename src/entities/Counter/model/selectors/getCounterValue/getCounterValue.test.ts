@@ -1,12 +1,11 @@
 import { StateSchema } from '@/app/providers/storeProvider';
-import { useCounterValue } from './getCounterValue';
+import { getCounterValue } from './getCounterValue';
 
 describe('getCounterValue', () => {
   test('return value', () => {
     const state: DeepPartial<StateSchema> = {
       counter: { value: 10 },
     };
-    const result = useCounterValue();
-    expect(result).toEqual(10);
+    expect(getCounterValue(state as StateSchema)).toEqual(10);
   });
 });
