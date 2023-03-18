@@ -629,7 +629,8 @@
       "username": "testuser",
       "password": "123",
       "roles": [
-        "ADMIN", "MANAGER"
+        "ADMIN",
+        "MANAGER"
       ],
       "avatar": "https://i.pinimg.com/736x/f5/27/41/f52741fb62bf1d821948a49204406bdc.jpg"
     }
@@ -659,8 +660,8 @@
     },
     {
       "id": "4",
-      "first": "Test",
-      "lastname": "User",
+      "first": "test",
+      "lastname": "user",
       "age": 5,
       "currency": "EUR",
       "country": "Russia",
