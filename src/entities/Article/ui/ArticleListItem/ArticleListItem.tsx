@@ -51,6 +51,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
       <AppLink
         target={target}
         to={getRouteArticleDetails(article.id)}
+        data-testid="ArticleListItem"
         className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
       >
         <Card>

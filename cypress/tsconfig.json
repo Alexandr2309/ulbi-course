@@ -4,7 +4,8 @@
     "lib": ["es5", "dom"],
     "types": ["cypress", "node"],
     "isolatedModules": false,
-    "allowJs": true
+    "allowJs": true,
+    "baseUrl": "http://localhost:8000/"
   },
   "extends": "../tsconfig.json",
   "include": ["**/*.ts"]
