@@ -85,6 +85,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
   return (
     <AppLink
       target={target}
+      data-testid="ArticleListItem"
       to={getRouteArticleDetails(article.id)}
       className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
     >

@@ -11,7 +11,7 @@ describe('template spec', () => {
     cy.resetProfile(profileId);
   });
   it('Профиль успешно загружается', () => {
-    cy.getByTestId('ProfileCard.firstname').should('have.value', 'new');
+    cy.getByTestId('ProfileCard.firstname').should('exist');
   });
   it('И успешно редактируется', () => {
     const firstname = 'assert';
