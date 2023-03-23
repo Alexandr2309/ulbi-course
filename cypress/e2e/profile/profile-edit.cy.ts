@@ -4,7 +4,7 @@ describe('template spec', () => {
     cy.visit('');
     cy.login().then((data) => {
       profileId = data.id;
-      cy.visit(`profile/${data.id}`);
+      cy.visit(`profile/${profileId}`);
     });
   });
   afterEach(() => {
