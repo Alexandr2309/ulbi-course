@@ -21,6 +21,11 @@ describe('template spec', () => {
     cy.getByTestId('ArticleRecommendationList').should('exist');
   });
 
+  it('use fixture(stabs)', () => {
+    cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
+    cy.getByTestId('ArticleRecommendationList').should('exist');
+  });
+
   it('and can put the comment', () => {
     cy.getByTestId('ArticleDetails.Info');
     cy.getByTestId('AddCommentForm').scrollIntoView();
