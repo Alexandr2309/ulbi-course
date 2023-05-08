@@ -4,7 +4,7 @@ describe('User is opened the page', () => {
       cy.visit('articles');
     });
   });
-  it('And articles succsesfully load', () => {
+  it('And articles successfully load', () => {
     cy.getByTestId('ArticleList').should('exist');
     cy.getByTestId('ArticleListItem').should('have.length.greaterThan', 3);
   });
