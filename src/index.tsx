@@ -1,4 +1,4 @@
-import { BrowserRouter } from 'react-router-dom';
+  import { BrowserRouter } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import { ThemeContextProvider } from '@/app/providers/themeProvider';
 import App from '@/app/App';

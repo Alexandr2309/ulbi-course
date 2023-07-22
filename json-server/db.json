@@ -604,6 +604,13 @@
       "roles": [
         "ADMIN"
       ],
+      "jsonSettings": {
+        "theme": "app_light_theme"
+      },
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": true
+      },
       "avatar": "https://i.pinimg.com/736x/f5/27/41/f52741fb62bf1d821948a49204406bdc.jpg"
     },
     {
@@ -613,12 +620,30 @@
       "roles": [
         "USER"
       ],
+      "jsonSettings": {
+        "theme": "app_light_theme",
+        "isFirstVisit": false,
+        "settingsHasBeenOpen": true
+      },
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": false
+      },
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "app_pink_theme",
+        "isFirstVisit": false,
+        "settingsHasBeenOpen": false
+      },
       "roles": [
         "MANAGER"
       ],

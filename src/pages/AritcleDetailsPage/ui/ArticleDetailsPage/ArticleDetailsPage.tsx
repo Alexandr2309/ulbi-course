@@ -12,6 +12,8 @@ import { articlesDetailsPageReducer } from '../../model/slices';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleRating } from '@/features/articleRating';
+import { getFeatureFlags, toggleFeatures } from "@/shared/lib/features";
+import { Card } from "@/shared/ui/Card";
 
 export interface ArticleDetailsPageProps {
   className?: string;
@@ -24,6 +26,13 @@ const reducers: ReducersList = {
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const { t } = useTranslation('article-details');
   const { id } = useParams<{ id: string }>();
+  const isArticleRatingEnabled = getFeatureFlags('isArticleRatingEnabled');
+
+  const articleRating = toggleFeatures({
+    name: 'isArticleRatingEnabled',
+    on: () => <ArticleRating articleId={id!} />,
+    off: () => <Card>{t('Оценка статьи скоро появится ')}</Card>
+  })
 
   if (!id) {
     return (
@@ -39,7 +48,8 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         <VStack gap="16" align="start">
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          <ArticleRating articleId={id} />
+          {articleRating}
+          {isArticleRatingEnabled && <ArticleRating articleId={id} />}
           <ArticleRecommendationsList className={cls.recommendations} />
           <ArticleDetailsComments id={id} />
         </VStack>

@@ -103,6 +103,7 @@ module.exports = {
         ignoreComments: true,
       },
     ],
+    'react/no-unstable-nested-components': 'warn',
     'object-curly-newline': 'warn',
     'react/no-array-index-key': 'warn',
     'no-param-reassign': 'off',
